@@ -1,0 +1,1094 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Steps for association analysis between risk factors and cardiovascular age-delta &#8212; The CCIG Grimoire</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://DevaSenevi.github.io/CCIG/book/analysis_steps.html" />
+    <link rel="shortcut icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="prev" title="Welcome to the Grimoire of the Computational Cardiac Imaging Groups!" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The CCIG Grimoire</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Steps for association analysis between risk factors and cardiovascular age-delta
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/DevaSenevi/CCIG/master?urlpath=tree/book/analysis_steps.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/DevaSenevi/CCIG/blob/master/book/analysis_steps.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG/issues/new?title=Issue%20on%20page%20%2Fbook/analysis_steps.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG/edit/master/book/analysis_steps.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/book/analysis_steps.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Steps for association analysis between risk factors and cardiovascular age-delta
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#disease-1-diabetes">
+   Disease 1: Diabetes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-propensity-match-samples">
+     (i) propensity match samples
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-analysis">
+     (ii) analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#summary">
+       Summary:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot">
+       Plot:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#regression-adjusted-for-age-age-2-sex">
+       Regression (adjusted for age, age^2, sex):
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#disease-2-hypertension">
+   Disease 2: Hypertension
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     (i) propensity match samples
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     (ii) analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Summary:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Plot:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Regression (adjusted for age, age^2, sex):
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forest-plot-categorical-variables">
+   Forest plot: Categorical variables
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Steps for association analysis between risk factors and cardiovascular age-delta</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Steps for association analysis between risk factors and cardiovascular age-delta
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#disease-1-diabetes">
+   Disease 1: Diabetes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-propensity-match-samples">
+     (i) propensity match samples
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ii-analysis">
+     (ii) analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#summary">
+       Summary:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plot">
+       Plot:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#regression-adjusted-for-age-age-2-sex">
+       Regression (adjusted for age, age^2, sex):
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#disease-2-hypertension">
+   Disease 2: Hypertension
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     (i) propensity match samples
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     (ii) analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Summary:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Plot:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Regression (adjusted for age, age^2, sex):
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forest-plot-categorical-variables">
+   Forest plot: Categorical variables
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="steps-for-association-analysis-between-risk-factors-and-cardiovascular-age-delta">
+<h1>Steps for association analysis between risk factors and cardiovascular age-delta<a class="headerlink" href="#steps-for-association-analysis-between-risk-factors-and-cardiovascular-age-delta" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<p>This .rmd uses outputs generated by the first stage of the method. This first stage generates a predicted age that is corrected for ‘regression to the mean’ bias associated in predicting biological age from chronological age.</p>
+<p>Inputs are healthy validation set predicted ages and remaining approx. 34K subjects’ predicted ages in the UK Biobank.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="disease-1-diabetes">
+<h1>Disease 1: Diabetes<a class="headerlink" href="#disease-1-diabetes" title="Permalink to this headline">#</a></h1>
+<section id="i-propensity-match-samples">
+<h2>(i) propensity match samples<a class="headerlink" href="#i-propensity-match-samples" title="Permalink to this headline">#</a></h2>
+<p>Healthy sample is matched to disease sample by age and sex.</p>
+<p>First, examine if there are any differences in covariates:</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	Welch Two Sample t-test
+
+data:  age_at_MRI by rf_diabetes
+t = -7.2518, df = 4634.4, p-value = 4.795e-13
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ -1.1962527 -0.6871013
+sample estimates:
+mean in group 0 mean in group 1 
+       63.90242        64.84410 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	Welch Two Sample t-test
+
+data:  sex by rf_diabetes
+t = -7.1905, df = 4605.6, p-value = 7.497e-13
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ -0.07960591 -0.04549683
+sample estimates:
+mean in group 0 mean in group 1 
+      0.4874623       0.5500136 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/analysis_steps_8_0.png" src="../_images/analysis_steps_8_0.png" />
+</div>
+</div>
+<p>Dimensions of matched data (equal numbers in both groups once matched, number represents total of healthy + disease):</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>7338</li><li>136</li></ol>
+</div></div>
+</div>
+<p>Now compare distributions of matched data:</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“`funs()` was deprecated in dplyr 0.8.0.
+Please use a list of either functions or lambdas: 
+
+  # Simple named list: 
+  list(mean = mean, median = median)
+
+  # Auto named with `tibble::lst()`: 
+  tibble::lst(mean, median)
+
+  # Using lambdas
+  list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.”
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 2 × 2</caption>
+<thead>
+	<tr><th scope=col>rf_diabetes</th><th scope=col>sex</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0</td><td>0.5500136</td></tr>
+	<tr><td>1</td><td>0.5500136</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="ii-analysis">
+<h2>(ii) analysis<a class="headerlink" href="#ii-analysis" title="Permalink to this headline">#</a></h2>
+<section id="summary">
+<h3>Summary:<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 2 × 3</caption>
+<thead>
+	<tr><th scope=col>rf_diabetes</th><th scope=col>meanca_delta</th><th scope=col>n</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0</td><td>-0.135</td><td>3669</td></tr>
+	<tr><td>1</td><td>0.174 </td><td>3669</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="plot">
+<h3>Plot:<a class="headerlink" href="#plot" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/analysis_steps_18_0.png" src="../_images/analysis_steps_18_0.png" />
+</div>
+</div>
+</section>
+<section id="regression-adjusted-for-age-age-2-sex">
+<h3>Regression (adjusted for age, age^2, sex):<a class="headerlink" href="#regression-adjusted-for-age-age-2-sex" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = ca_delta ~ rf_diabetes + poly(age_at_MRI, 2) + sex, 
+    data = dta_m)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-33.248  -6.850  -0.218   6.791  34.131 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept)            0.1550     0.2055   0.754   0.4507  
+rf_diabetes            0.3096     0.2289   1.353   0.1762  
+poly(age_at_MRI, 2)1  -4.3951     9.8172  -0.448   0.6544  
+poly(age_at_MRI, 2)2  11.8102     9.8023   1.205   0.2283  
+sex                   -0.5282     0.2304  -2.293   0.0219 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.802 on 7333 degrees of freedom
+Multiple R-squared:  0.001205,	Adjusted R-squared:  0.0006602 
+F-statistic: 2.212 on 4 and 7333 DF,  p-value: 0.06514
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 5 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td> -0.2478601</td><td> 0.55792884</td></tr>
+	<tr><th scope=row>rf_diabetes</th><td> -0.1390727</td><td> 0.75818057</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)1</th><td>-23.6397501</td><td>14.84949413</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)2</th><td> -7.4051133</td><td>31.02549636</td></tr>
+	<tr><th scope=row>sex</th><td> -0.9797560</td><td>-0.07659024</td></tr>
+</tbody>
+</table>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = ca_delta ~ poly(age_at_MRI, 2) + sex * rf_diabetes, 
+    data = dta_m)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-33.316  -6.844  -0.200   6.812  34.063 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)           0.08751    0.24135   0.363    0.717
+poly(age_at_MRI, 2)1 -4.39513    9.81772  -0.448    0.654
+poly(age_at_MRI, 2)2 11.81019    9.80277   1.205    0.228
+sex                  -0.40541    0.32555  -1.245    0.213
+rf_diabetes           0.44460    0.34118   1.303    0.193
+sex:rf_diabetes      -0.24553    0.46004  -0.534    0.594
+
+Residual standard error: 9.803 on 7332 degrees of freedom
+Multiple R-squared:  0.001244,	Adjusted R-squared:  0.0005628 
+F-statistic: 1.826 on 5 and 7332 DF,  p-value: 0.1041
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td> -0.3856115</td><td> 0.5606381</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)1</th><td>-23.6406891</td><td>14.8504331</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)2</th><td> -7.4060508</td><td>31.0264339</td></tr>
+	<tr><th scope=row>sex</th><td> -1.0435851</td><td> 0.2327641</td></tr>
+	<tr><th scope=row>rf_diabetes</th><td> -0.2242198</td><td> 1.1134120</td></tr>
+	<tr><th scope=row>sex:rf_diabetes</th><td> -1.1473452</td><td> 0.6562948</td></tr>
+</tbody>
+</table>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = ca_delta ~ poly(age_at_MRI, 2) + I(1 - sex) * rf_diabetes, 
+    data = dta_m)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-33.316  -6.844  -0.200   6.812  34.063 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)             -0.3179     0.2183  -1.456    0.145
+poly(age_at_MRI, 2)1    -4.3951     9.8177  -0.448    0.654
+poly(age_at_MRI, 2)2    11.8102     9.8028   1.205    0.228
+I(1 - sex)               0.4054     0.3256   1.245    0.213
+rf_diabetes              0.1991     0.3086   0.645    0.519
+I(1 - sex):rf_diabetes   0.2455     0.4600   0.534    0.594
+
+Residual standard error: 9.803 on 7332 degrees of freedom
+Multiple R-squared:  0.001244,	Adjusted R-squared:  0.0005628 
+F-statistic: 1.826 on 5 and 7332 DF,  p-value: 0.1041
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td> -0.7458100</td><td> 0.1100155</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)1</th><td>-23.6406891</td><td>14.8504331</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)2</th><td> -7.4060508</td><td>31.0264339</td></tr>
+	<tr><th scope=row>I(1 - sex)</th><td> -0.2327641</td><td> 1.0435851</td></tr>
+	<tr><th scope=row>rf_diabetes</th><td> -0.4058792</td><td> 0.8040210</td></tr>
+	<tr><th scope=row>I(1 - sex):rf_diabetes</th><td> -0.6562948</td><td> 1.1473452</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="disease-2-hypertension">
+<h1>Disease 2: Hypertension<a class="headerlink" href="#disease-2-hypertension" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>(i) propensity match samples<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Healthy sample is matched to disease sample by age and sex.</p>
+<p>First, examine if there are any differences in covariates.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	Welch Two Sample t-test
+
+data:  age_at_MRI by rf_htn
+t = -27.257, df = 32186, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ -2.376973 -2.058054
+sample estimates:
+mean in group 0 mean in group 1 
+       63.03944        65.25696 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	Welch Two Sample t-test
+
+data:  sex by rf_htn
+t = -13.35, df = 31921, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ -0.08336211 -0.06201811
+sample estimates:
+mean in group 0 mean in group 1 
+      0.4625790       0.5352692 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/analysis_steps_25_0.png" src="../_images/analysis_steps_25_0.png" />
+</div>
+</div>
+<p>Dimensions of matched data (equal numbers in both groups once matched, number represents total of healthy + htn)</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>29686</li><li>137</li></ol>
+</div></div>
+</div>
+<p>Now compare distributions of matched data</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 2 × 2</caption>
+<thead>
+	<tr><th scope=col>rf_htn</th><th scope=col>sex</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0</td><td>0.5226706</td></tr>
+	<tr><td>1</td><td>0.5352692</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="id2">
+<h2>(ii) analysis<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>Summary:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 2 × 3</caption>
+<thead>
+	<tr><th scope=col>rf_htn</th><th scope=col>mean_ca_delta</th><th scope=col>n</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0</td><td>-0.748</td><td>14843</td></tr>
+	<tr><td>1</td><td>0.821 </td><td>14843</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="id4">
+<h3>Plot:<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/analysis_steps_35_0.png" src="../_images/analysis_steps_35_0.png" />
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Regression (adjusted for age, age^2, sex):<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = ca_delta ~ rf_htn + age_at_MRI + poly(age_at_MRI, 
+    2) + sex, data = dta_m_htn)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-36.609  -6.815  -0.133   6.809  34.599 
+
+Coefficients: (1 not defined because of singularities)
+                      Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)           0.074600   0.517591   0.144    0.885    
+rf_htn                1.571240   0.113906  13.794  &lt; 2e-16 ***
+age_at_MRI           -0.007320   0.007857  -0.932    0.352    
+poly(age_at_MRI, 2)1        NA         NA      NA       NA    
+poly(age_at_MRI, 2)2 22.142638   9.809253   2.257    0.024 *  
+sex                  -0.657250   0.114046  -5.763 8.34e-09 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.802 on 29681 degrees of freedom
+Multiple R-squared:  0.007692,	Adjusted R-squared:  0.007559 
+F-statistic: 57.52 on 4 and 29681 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>-0.93990066</td><td> 1.089100481</td></tr>
+	<tr><th scope=row>rf_htn</th><td> 1.34797958</td><td> 1.794500451</td></tr>
+	<tr><th scope=row>age_at_MRI</th><td>-0.02272063</td><td> 0.008080425</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)1</th><td>         NA</td><td>          NA</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)2</th><td> 2.91607216</td><td>41.369203679</td></tr>
+	<tr><th scope=row>sex</th><td>-0.88078623</td><td>-0.433714697</td></tr>
+</tbody>
+</table>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = ca_delta ~ poly(age_at_MRI, 2) + sex * rf_htn, data = dta_m_htn)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-36.587  -6.825  -0.133   6.808  34.579 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)          -0.42371    0.11647  -3.638 0.000275 ***
+poly(age_at_MRI, 2)1 -9.03378    9.81466  -0.920 0.357352    
+poly(age_at_MRI, 2)2 22.21658    9.81141   2.264 0.023559 *  
+sex                  -0.61495    0.16113  -3.817 0.000136 ***
+rf_htn                1.61602    0.16581   9.746  &lt; 2e-16 ***
+sex:rf_htn           -0.08477    0.22811  -0.372 0.710169    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.802 on 29680 degrees of freedom
+Multiple R-squared:  0.007697,	Adjusted R-squared:  0.00753 
+F-statistic: 46.04 on 5 and 29680 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td> -0.6519931</td><td>-0.1954327</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)1</th><td>-28.2709396</td><td>10.2033823</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)2</th><td>  2.9857783</td><td>41.4473769</td></tr>
+	<tr><th scope=row>sex</th><td> -0.9307677</td><td>-0.2991345</td></tr>
+	<tr><th scope=row>rf_htn</th><td>  1.2910183</td><td> 1.9410220</td></tr>
+	<tr><th scope=row>sex:rf_htn</th><td> -0.5318870</td><td> 0.3623382</td></tr>
+</tbody>
+</table>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = ca_delta ~ poly(age_at_MRI, 2) + sex * rf_htn, data = dta_m_htn)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-36.587  -6.825  -0.133   6.808  34.579 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)          -0.42371    0.11647  -3.638 0.000275 ***
+poly(age_at_MRI, 2)1 -9.03378    9.81466  -0.920 0.357352    
+poly(age_at_MRI, 2)2 22.21658    9.81141   2.264 0.023559 *  
+sex                  -0.61495    0.16113  -3.817 0.000136 ***
+rf_htn                1.61602    0.16581   9.746  &lt; 2e-16 ***
+sex:rf_htn           -0.08477    0.22811  -0.372 0.710169    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.802 on 29680 degrees of freedom
+Multiple R-squared:  0.007697,	Adjusted R-squared:  0.00753 
+F-statistic: 46.04 on 5 and 29680 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td> -0.6519931</td><td>-0.1954327</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)1</th><td>-28.2709396</td><td>10.2033823</td></tr>
+	<tr><th scope=row>poly(age_at_MRI, 2)2</th><td>  2.9857783</td><td>41.4473769</td></tr>
+	<tr><th scope=row>sex</th><td> -0.9307677</td><td>-0.2991345</td></tr>
+	<tr><th scope=row>rf_htn</th><td>  1.2910183</td><td> 1.9410220</td></tr>
+	<tr><th scope=row>sex:rf_htn</th><td> -0.5318870</td><td> 0.3623382</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="forest-plot-categorical-variables">
+<h1>Forest plot: Categorical variables<a class="headerlink" href="#forest-plot-categorical-variables" title="Permalink to this headline">#</a></h1>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/analysis_steps_40_0.png" src="../_images/analysis_steps_40_0.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to the Grimoire of the Computational Cardiac Imaging Groups!</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="markdown.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Markdown Files</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Deva Sen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
