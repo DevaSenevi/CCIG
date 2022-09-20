@@ -1,6 +1,19 @@
-# General notes:
+# Trabeculae Models
 
-All files needed to replicate my results are in the [Trabecular flow sims](https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared Documents/Trabecular flow sims?csf=1&web=1&e=m2FKtw) folder on SharePoint. All files, folders, paths I refer to in this document start from that folder.
+## Table of contents
+
+ 1. [General notes](#general-notes)
+ 2. [Idealised trabecular geometries](#idealised-trabecular-geometries)
+ 3. [Preliminary results and recommendations for future work](#preliminary-results-and-recommendations-for-future-work)
+ 4. [Micro-CT geometries](#micro-ct-geometries)
+ 5. [Living heart model](#living-heart-model)
+ 6. [Contact details](#contact-details)
+
+---
+
+## General notes
+
+All files needed to replicate my results are in the [Trabecular flow sims](<https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared Documents/Trabecular flow sims?csf=1&web=1&e=m2FKtw>) folder on SharePoint. All files, folders, paths I refer to in this document start from that folder.
 
 ## Idealised trabecular geometries
 
@@ -12,11 +25,11 @@ These have been created using 3 main softwares:
 
 ### Lattice (trabeculae) structures in nTopology
 
-Information on the software can be found [here](https://ntopology.com/).
+Information on the software can be found [here](<https://ntopology.com/>).
 
-[Here](https://ntopology.com/upcoming-and-resources/), and especially under "Engineering design", you can find a useful video tutorial and webinars that are quite useful to learn how to operate *nTopology* and build lattice structures.
+[Here](<https://ntopology.com/upcoming-and-resources/>), and especially under "Engineering design", you can find a useful video tutorial and webinars that are quite useful to learn how to operate *nTopology* and build lattice structures.
 
-Licence: while the software is commercial, academics and researchers might be eligible for free licences (I have received and worked with one of these). More info [here](https://ntopology.com/education/).
+Licence: while the software is commercial, academics and researchers might be eligible for free licences (I have received and worked with one of these). More info [here](<https://ntopology.com/education/>).
 
 Previously designed geometries with their design workflow can be found in:
 
@@ -38,11 +51,11 @@ Key component of the design workflow (see files) are
 
 ### Flow Vision Simulations
 
-Information regarding the fluid solver – FlowVision – can be found [here](https://flowvisioncfd.com/en/). With documentation and tutorials located [here](https://flowvisioncfd.com/en/support-page-en/blog-en). I highly recommend reading the documentation and executing the tutorials before starting to work on the shared setup files.
+Information regarding the fluid solver – FlowVision – can be found [here](<https://flowvisioncfd.com/en/>). With documentation and tutorials located [here](<https://flowvisioncfd.com/en/support-page-en/blog-en>). I highly recommend reading the documentation and executing the tutorials before starting to work on the shared setup files.
 
 Once you are familiar with FV setup, it should be fairly straightforward to replicate previous simulations, for which all setup files can be found here:
 
-`\Trabecular flow sims\Idealised Models\FV Simulations Setup and Results\FV_ClientDirectory
+`\Trabecular flow sims\Idealised Models\FV Simulations Setup and Results\FV_ClientDirectory`
 
 `\Trabecular flow sims\Idealised Models\FV Simulations Setup and Results\FV_ClientDirectory`
 
@@ -54,27 +67,31 @@ Corresponding results are in:
 
 `\Trabecular flow sims\LV models\FV Simulations Setup and Results\FV_ServerDirectory`
 
-**Licence**. FV is a licenced software. We have a total of 40 cores shared with the Xu Group. Of these, 16 are used by Zhongjie Yin ([z.yin20@imperial.ac.uk](mailto:z.yin20@imperial.ac.uk)) while 24 are dedicated to this project. The current licence expires on Jan 13th 2023. The licence server is managed by ICT. Please get in touch with me ([s.pirola@imperial.ac.uk](mailto:s.pirola@imperial.ac.uk)) or Zhongjie ([z.yin20@imperial.ac.uk](mailto:z.yin20@imperial.ac.uk)) should additional access to the licence server need to be arranged.
+**Licence**. FV is a licenced software. We have a total of 40 cores shared with the Xu Group. Of these, 16 are used by Zhongjie Yin ([z.yin20@imperial.ac.uk](<mailto:z.yin20@imperial.ac.uk>)) while 24 are dedicated to this project. The current licence expires on Jan 13th 2023. The licence server is managed by ICT. Please get in touch with me ([s.pirola@imperial.ac.uk](<mailto:s.pirola@imperial.ac.uk>)) or Zhongjie ([z.yin20@imperial.ac.uk](<mailto:z.yin20@imperial.ac.uk>)) should additional access to the licence server need to be arranged.
 
-The software is pre-installed (including licence set-up and setup for FSI – 1 or 2-way coupling with Abaqus) on workstation ce-spirola-dt (Windows), which can be used for this work. The workstation is located in ACEX 1M17B, Chemical Engineering Department, South Kensington Campus. All files uploaded on SharePoint are also already available on this workstation. Please contact [s.pirola@imperial.ac.uk](mailto:s.pirola@imperial.ac.uk) (machine owner) to request remote access, (if applicable and needed) admin rights, and for info on how to navigate and use the workstation.
+The software is pre-installed (including licence set-up and setup for FSI – 1 or 2-way coupling with Abaqus) on workstation ce-spirola-dt (Windows), which can be used for this work. The workstation is located in ACEX 1M17B, Chemical Engineering Department, South Kensington Campus. All files uploaded on SharePoint are also already available on this workstation. Please contact [s.pirola@imperial.ac.uk](<mailto:s.pirola@imperial.ac.uk>) (machine owner) to request remote access, (if applicable and needed) admin rights, and for info on how to navigate and use the workstation.
 
 ### Notes on the simulation setup
 
 1. Simulations conducted with *nTopology* geometries use a non-Newtonian (Carreau-Yasuda, see code below) blood flow model. This is defined in `Substances\?Blood\viscosity` in the FV setup tree. Here the shear rate is defined as the room mean square of the S-criterion (readily available as a FV variable). This has been confirmed with FV developers. However, I still recommend running a couple of simulations with a known geometry (e.g. backward facing step) to further verify this and the correct implementation of the non-Newtonian model in FV.
+  
+>>**Code for the Carreau-Yasuda model:**
 
-Code for the Carreau-Yasuda model:
 
-_mu\_min=0.0035;_
+```    
+mu\_min=0.0035;_
 
-_mu\_max=0.16;_
+mu\_max=0.16;_
 
-_lambda=8.2;_
+lambda=8.2;_
 
-_a=0.64;_
+a=0.64;_
 
-_n=0.2128;_
+n=0.2128;_
 
-_mu\_min+(mu\_max-mu\_min)\*((1+(lambda\*sqrt(S\_CRITERION))^a)^((n-1)/a))_
+mu\_min+(mu\_max-mu\_min)\*((1+(lambda\*sqrt(S\_CRITERION))^a)^((n-1)/a))_
+    
+```
 
 2. Use of trabeculae geometries: trabeculae are designed separately from the fluid volume surface and imported as moving bodies. This is so that a modular setup could be obtained in which trabecular surfaces are easily replaced and an airtight fluid volume is always ensured. Also, this allows for the trabecular surfaces to be treated as separate entities, for which a specific drag force can be calculated. This will also facilitate implementation in Abaqus for FSI, though the overlap between the trabecular and left ventricular surfaces will need to be corrected.
 
@@ -82,7 +99,7 @@ _mu\_min+(mu\_max-mu\_min)\*((1+(lambda\*sqrt(S\_CRITERION))^a)^((n-1)/a))_
 
 ### Idealised Trabecular Geometries
 
-Figures showing the computational domain and summarising key preliminary results are shown in the ppt file [SPirola\_summary.ppt](https://imperiallondon.sharepoint.com/:p:/r/sites/CCIgroup/Shared%20Documents/Trabecular%20flow%20sims/SPirola_Summary.pptx?d=wc8b2f4ca9aee49fca2641c7a0a542b52&csf=1&web=1&e=ih2eR3) Overall, preliminary results show that increasing the beam dimension and the trabecular compaction causes an increase in drag force. Please note: the fluid domain has been designed to replicate half of the mitral valve opening (indeed a symmetry boundary condition is used at the top wall). Reported results have been simulated with 0.1 m/s inlet velocity. I'd recommend testing the drag force trend under different physiological Re numbers.
+Figures showing the computational domain and summarising key preliminary results are shown in the ppt file [SPirola\_summary.ppt](<https://imperiallondon.sharepoint.com/:p:/r/sites/CCIgroup/Shared%20Documents/Trabecular%20flow%20sims/SPirola_Summary.pptx?d=wc8b2f4ca9aee49fca2641c7a0a542b52&csf=1&web=1&e=ih2eR3>) Overall, preliminary results show that increasing the beam dimension and the trabecular compaction causes an increase in drag force. Please note: the fluid domain has been designed to replicate half of the mitral valve opening (indeed a symmetry boundary condition is used at the top wall). Reported results have been simulated with 0.1 m/s inlet velocity. I'd recommend testing the drag force trend under different physiological Re numbers.
 
 Currently only drag force is calculated. A more robust approach would be to calculate the drag coefficient. To do so, a robust approach for calculation of projected frontal area will need to be developed (please have a look at the theory behind conversion of drag force into drag coefficient).
 
@@ -104,16 +121,16 @@ Other files in the folder are derived from postprocessing of these original file
 
 While we still have these data and corresponding simulation results (preliminary) the necessity to crop the domain for processing and the lack of contrast within the heart chambers has forced us to reconstruct square/rectangular samples of trabeculae. While these have been and are extremely useful to design the synthetic trabeculae (see above), simulations conducted with these geometries are unrealistic and have therefore been paused for the time being.
 
-Collecting new micro-CT data. Various department in Imperial College London have a micro-CT scan that can potentially be used to collect new CT data with better contrast. One such scan is in the Chem.Eng Department: for more information, please contact Edward (Ed) Bailey ([edward.bailey@imperial.ac.uk](mailto:edward.bailey@imperial.ac.uk)), Experimental Officer. A new scan is being installed in ICTEM: Michela Noseda ([m.noseda@imperial.ac.uk](mailto:m.noseda@imperial.ac.uk)) and Lukas Mach ([l.mach@imperial.ac.uk](mailto:l.mach@imperial.ac.uk) ) should be able to provide more information on this. Also, we have a sample ready to be scanned (contrast should be added): reach out to Richard Jones ([R.Jones@rbht.nhs.uk)](mailto:R.Jones@rbht.nhs.uk) and Lukas Mach for this.
+Collecting new micro-CT data. Various department in Imperial College London have a micro-CT scan that can potentially be used to collect new CT data with better contrast. One such scan is in the Chem.Eng Department: for more information, please contact Edward (Ed) Bailey ([edward.bailey@imperial.ac.uk](<mailto:edward.bailey@imperial.ac.uk>)), Experimental Officer. A new scan is being installed in ICTEM: Michela Noseda ([m.noseda@imperial.ac.uk](<mailto:m.noseda@imperial.ac.uk>)) and Lukas Mach ([l.mach@imperial.ac.uk](<mailto:l.mach@imperial.ac.uk>) ) should be able to provide more information on this. Also, we have a sample ready to be scanned (contrast should be added): reach out to Richard Jones ([R.Jones@rbht.nhs.uk)](<mailto:R.Jones@rbht.nhs.uk>) and Lukas Mach for this.
 
 ## Living heart model
 
 Access to the Living heart model (LHM) is subject to successful completion of the LHM agreement by Imperial, which is still pending. After the agreement is signed, we'll have access to the LHM that can be used to run FEA simulations in Abaqus. The model does not contain trabeculae as yet, but an initial feasibility assessment with the LHM Team concluded that, with training on the 3DEXPERIENCE Platform and its LHM MVA Evaluation Model, trabeculae could be added and simulated.
 
-To be granted access to this, provided the LHM agreement is in place, please get in touch with [clint.davies-taylor@3ds.com](mailto:clint.davies-taylor@3ds.com) who acts as a first point of contact between Simulia and Imperial.
+To be granted access to this, provided the LHM agreement is in place, please get in touch with [clint.davies-taylor@3ds.com](<mailto:clint.davies-taylor@3ds.com>) who acts as a first point of contact between Simulia and Imperial.
 
 Should you be interested in FEA using the LHM, I'd recommend contacting them sooner rather than later, as our initial assessment was of about 6 weeks of full-time training only to master the 3DEXPERIENCE Platform.
 
-**My contact details**
+## Contact details
 
-I am fully available should further details and clarification be needed. You can reach me using my Imperial email [s.pirola@imperial.ac.uk](mailto:s.pirola@imperial.ac.uk) , and/or my TU Delft email [s.p.drpirola@tudelft.nl](mailto:s.p.drpirola@tudelft.nl) (which I will probably monitor more frequently as time goes by).
+I am fully available should further details and clarification be needed. You can reach me using my Imperial email [s.pirola@imperial.ac.uk](<mailto:s.pirola@imperial.ac.uk>) , and/or my TU Delft email [s.p.drpirola@tudelft.nl](<mailto:s.p.drpirola@tudelft.nl>) (which I will probably monitor more frequently as time goes by).
