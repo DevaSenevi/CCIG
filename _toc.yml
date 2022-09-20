@@ -4,12 +4,13 @@
 format: jb-book
 root: index
 chapters:
-  - file: book/analysis_steps  
+  - file: book/analysis_steps 
+  - file: book/trabeculae_models 
   - file: book/notebooks
   - file: book/markdown
   - file: book/testMyST
   - file: book/bibliography
-  - file: book/test_trabeculae_models
+  
     
 # Or you organize the TOC by parts
 
