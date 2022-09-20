@@ -1,10 +1,10 @@
-# General notes:
+# Trabecular flow modelling
 
-All files needed to replicate my results are in the [Trabecular flow sims](https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared Documents/Trabecular flow sims?csf=1&web=1&e=m2FKtw) folder on SharePoint. All files, folders, paths I refer to in this document start from that folder.
+All files needed to replicate my results are in the [Trabecular flow sims](https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared%20Documents/Trabecular flow%20sims?csf=1&web=1&e=m2FKtw) folder on the Computational Cardiac Imaging Group SharePoint. All files, folders, paths I refer to in this document start from that folder.
 
 ## Idealised trabecular geometries
 
-These have been created using 3 main softwares:
+These have been created using 3 main software packages:
 
 1. *Blender*: creates nice trabecular structures, but the resulting surface mesh contains errors and imprecisions, such as overlapping edges and duplicate faces. The amount of these errors prevents correction, and therefore use in CFD, which requires a precise definition of the fluid domain walls. Blender is Open Source.
 2. *Mesh mixer*: while this software provides almost error free geometries, it can only create simple lattice structures that do not represent the trabeculae particularly well. Mesh mixer is Open Source.
@@ -12,11 +12,11 @@ These have been created using 3 main softwares:
 
 ### Lattice (trabeculae) structures in nTopology
 
-Information on the software can be found [here](https://ntopology.com/).
+Information on the software can be found at [nTopology](https://ntopology.com/).
 
-[Here](https://ntopology.com/upcoming-and-resources/), and especially under "Engineering design", you can find a useful video tutorial and webinars that are quite useful to learn how to operate *nTopology* and build lattice structures.
+There are [resources](https://ntopology.com/upcoming-and-resources/), and especially under "Engineering design", where you can find a useful video tutorial and webinars that are quite useful to learn how to operate *nTopology* and build lattice structures.
 
-Licence: while the software is commercial, academics and researchers might be eligible for free licences (I have received and worked with one of these). More info [here](https://ntopology.com/education/).
+*Licence*: while the software is commercial, academics and researchers might be eligible for free licences (I have received and worked with one of these). More info at [nToplology](https://ntopology.com/education/).
 
 Previously designed geometries with their design workflow can be found in:
 
@@ -42,8 +42,6 @@ Information regarding the fluid solver – FlowVision – can be found [here](ht
 
 Once you are familiar with FV setup, it should be fairly straightforward to replicate previous simulations, for which all setup files can be found here:
 
-`\Trabecular flow sims\Idealised Models\FV Simulations Setup and Results\FV_ClientDirectory
-
 `\Trabecular flow sims\Idealised Models\FV Simulations Setup and Results\FV_ClientDirectory`
 
 `\Trabecular flow sims\LV models\FV Simulations Setup and Results\FV_ClientDirectory`
@@ -64,17 +62,19 @@ The software is pre-installed (including licence set-up and setup for FSI – 1 
 
 Code for the Carreau-Yasuda model:
 
-_mu\_min=0.0035;_
+$\mu_{min}$=0.0035;
 
-_mu\_max=0.16;_
+$\mu_{max}$=0.16;
 
-_lambda=8.2;_
+$\lambda$=8.2;
 
-_a=0.64;_
+$\alpha$=0.64;
 
-_n=0.2128;_
+$n$=0.2128;
 
-_mu\_min+(mu\_max-mu\_min)\*((1+(lambda\*sqrt(S\_CRITERION))^a)^((n-1)/a))_
+$$
+\mu_{min} + (\mu_{max} - \mu_{min}) \times (1+(\lambda \sqrt{\dot{\gamma}})^a)^\frac{n-1}{a}
+$$
 
 2. Use of trabeculae geometries: trabeculae are designed separately from the fluid volume surface and imported as moving bodies. This is so that a modular setup could be obtained in which trabecular surfaces are easily replaced and an airtight fluid volume is always ensured. Also, this allows for the trabecular surfaces to be treated as separate entities, for which a specific drag force can be calculated. This will also facilitate implementation in Abaqus for FSI, though the overlap between the trabecular and left ventricular surfaces will need to be corrected.
 
@@ -82,7 +82,7 @@ _mu\_min+(mu\_max-mu\_min)\*((1+(lambda\*sqrt(S\_CRITERION))^a)^((n-1)/a))_
 
 ### Idealised Trabecular Geometries
 
-Figures showing the computational domain and summarising key preliminary results are shown in the ppt file [SPirola\_summary.ppt](https://imperiallondon.sharepoint.com/:p:/r/sites/CCIgroup/Shared%20Documents/Trabecular%20flow%20sims/SPirola_Summary.pptx?d=wc8b2f4ca9aee49fca2641c7a0a542b52&csf=1&web=1&e=ih2eR3) Overall, preliminary results show that increasing the beam dimension and the trabecular compaction causes an increase in drag force. Please note: the fluid domain has been designed to replicate half of the mitral valve opening (indeed a symmetry boundary condition is used at the top wall). Reported results have been simulated with 0.1 m/s inlet velocity. I'd recommend testing the drag force trend under different physiological Re numbers.
+Figures showing the computational domain and summarising key preliminary results are shown in the ppt file [SPirola\_summary.ppt](https://imperiallondon.sharepoint.com/:p:/r/sites/CCIgroup/Shared%20Documents/Trabecular%20flow%20sims/SPirola_Summary.pptx?d=wc8b2f4ca9aee49fca2641c7a0a542b52&csf=1&web=1&e=ih2eR3). Overall, preliminary results show that increasing the beam dimension and the trabecular compaction causes an increase in drag force. Please note: the fluid domain has been designed to replicate half of the mitral valve opening (indeed a symmetry boundary condition is used at the top wall). Reported results have been simulated with 0.1 m/s inlet velocity. I'd recommend testing the drag force trend under different physiological Re numbers.
 
 Currently only drag force is calculated. A more robust approach would be to calculate the drag coefficient. To do so, a robust approach for calculation of projected frontal area will need to be developed (please have a look at the theory behind conversion of drag force into drag coefficient).
 
@@ -96,11 +96,11 @@ This work should ultimately aim to employ a moving wall approach. All preliminar
 
 We received/collected micro-CT imaging data from various sources:
 
-- **Great Ormond Street hospital (GOSH)**: data and preliminary simulations (folder "FlowVision") can be found in `\Trabecular flow sims\Others\GOSH`. These data were shared as STL files (we do not have the raw images). Shared files are in `\Trabecular flow sims\Others\GOSH\Shared`
+- *Great Ormond Street hospital (GOSH)*: data and preliminary simulations (folder "FlowVision") can be found in `\Trabecular flow sims\Others\GOSH`. These data were shared as STL files (we do not have the raw images). Shared files are in `\Trabecular flow sims\Others\GOSH\Shared`
 
 Other files in the folder are derived from postprocessing of these original files to remove errors in the surface mesh. "3M" stands for 3-matic, "3DTV" 3D Transvidia: these are postprocessing software used to correct the geometries. The CAD files (.SLDPRT) contain the fluid volume domain.
 
-- University of Birmingham: data and preliminary simulations (folder "FlowVision") can be found in `Trabecular flow sims\Others\Birmingham`. The folder "Dicom" contains the raw images, while the folder "DicomRadiant" contains postprocessed images. ".mcs" files are Mimics files containing segmentations of various regions contained in the images. Unfortunately, due to the dimensions of these microCT data, processing the full raw images has proven to be prohibitive, therefore raw images have been cropped to reduce the processing burden, so different files contain different cropped regions.
+- *University of Birmingham*: data and preliminary simulations (folder "FlowVision") can be found in `Trabecular flow sims\Others\Birmingham`. The folder "Dicom" contains the raw images, while the folder "DicomRadiant" contains postprocessed images. ".mcs" files are Mimics files containing segmentations of various regions contained in the images. Unfortunately, due to the dimensions of these microCT data, processing the full raw images has proven to be prohibitive, therefore raw images have been cropped to reduce the processing burden, so different files contain different cropped regions.
 
 While we still have these data and corresponding simulation results (preliminary) the necessity to crop the domain for processing and the lack of contrast within the heart chambers has forced us to reconstruct square/rectangular samples of trabeculae. While these have been and are extremely useful to design the synthetic trabeculae (see above), simulations conducted with these geometries are unrealistic and have therefore been paused for the time being.
 
