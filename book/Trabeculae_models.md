@@ -1,6 +1,6 @@
 # Trabecular flow modelling
 
-All files needed to replicate my results are in the [Trabecular flow sims](https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared%20Documents/Trabecular flow%20sims?csf=1&web=1&e=m2FKtw) folder on the Computational Cardiac Imaging Group SharePoint. All files, folders, paths I refer to in this document start from that folder.
+All files needed to replicate my results are in the [Trabecular flow sims](https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared%20Documents/Trabecular%20flow%20sims?csf=1&web=1&e=m2FKtw) folder on the Computational Cardiac Imaging Group SharePoint. All files, folders, paths I refer to in this document start from that folder.
 
 ## Idealised trabecular geometries
 
