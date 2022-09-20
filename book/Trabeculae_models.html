@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>General notes: &#8212; The CCIG Grimoire</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://DevaSenevi.github.io/CCIG/book/Trabeculae_models.html" />
+    <link rel="shortcut icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Bibliography" href="bibliography.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The CCIG Grimoire</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analysis_steps.html">
+   Steps for association analysis between risk factors and cardiovascular age-delta
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   General notes:
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG/issues/new?title=Issue%20on%20page%20%2Fbook/Trabeculae_models.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG/edit/master/book/Trabeculae_models.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/book/Trabeculae_models.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#idealised-trabecular-geometries">
+   Idealised trabecular geometries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lattice-trabeculae-structures-in-ntopology">
+     Lattice (trabeculae) structures in nTopology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flow-vision-simulations">
+     Flow Vision Simulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes-on-the-simulation-setup">
+     Notes on the simulation setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-results-and-recommendations-for-future-work">
+   Preliminary results and recommendations for future work
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Idealised Trabecular Geometries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lv-trabecular-geometries">
+     LV Trabecular Geometries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#micro-ct-geometries">
+   Micro-CT geometries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#living-heart-model">
+   Living heart model
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>General notes:</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#idealised-trabecular-geometries">
+   Idealised trabecular geometries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lattice-trabeculae-structures-in-ntopology">
+     Lattice (trabeculae) structures in nTopology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flow-vision-simulations">
+     Flow Vision Simulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes-on-the-simulation-setup">
+     Notes on the simulation setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-results-and-recommendations-for-future-work">
+   Preliminary results and recommendations for future work
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Idealised Trabecular Geometries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lv-trabecular-geometries">
+     LV Trabecular Geometries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#micro-ct-geometries">
+   Micro-CT geometries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#living-heart-model">
+   Living heart model
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="general-notes">
+<h1>General notes:<a class="headerlink" href="#general-notes" title="Permalink to this headline">#</a></h1>
+<p>All files needed to replicate my results are in the [Trabecular flow sims](<a class="reference external" href="https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared">https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared</a> Documents/Trabecular flow sims?csf=1&amp;web=1&amp;e=m2FKtw) folder on SharePoint. All files, folders, paths I refer to in this document start from that folder.</p>
+<section id="idealised-trabecular-geometries">
+<h2>Idealised trabecular geometries<a class="headerlink" href="#idealised-trabecular-geometries" title="Permalink to this headline">#</a></h2>
+<p>These have been created using 3 main softwares:</p>
+<ol class="simple">
+<li><p><em>Blender</em>: creates nice trabecular structures, but the resulting surface mesh contains errors and imprecisions, such as overlapping edges and duplicate faces. The amount of these errors prevents correction, and therefore use in CFD, which requires a precise definition of the fluid domain walls. Blender is Open Source.</p></li>
+<li><p><em>Mesh mixer</em>: while this software provides almost error free geometries, it can only create simple lattice structures that do not represent the trabeculae particularly well. Mesh mixer is Open Source.</p></li>
+<li><p><em>nTopology:</em> this software obtains intricate lattice structures that can represent the trabeculae well. It also allows you to control beam (trabecular) diameter and spacing (i.e., distance between beams). These parameters can also be controlled to change along a prescribed direction. Given its range of functionalities and its flexibility to adapt the generated structures to any input geometry, I’d recommend this software is used for further analyses. nTop in licenced.</p></li>
+</ol>
+<section id="lattice-trabeculae-structures-in-ntopology">
+<h3>Lattice (trabeculae) structures in nTopology<a class="headerlink" href="#lattice-trabeculae-structures-in-ntopology" title="Permalink to this headline">#</a></h3>
+<p>Information on the software can be found <a class="reference external" href="https://ntopology.com/">here</a>.</p>
+<p><a class="reference external" href="https://ntopology.com/upcoming-and-resources/">Here</a>, and especially under “Engineering design”, you can find a useful video tutorial and webinars that are quite useful to learn how to operate <em>nTopology</em> and build lattice structures.</p>
+<p>Licence: while the software is commercial, academics and researchers might be eligible for free licences (I have received and worked with one of these). More info <a class="reference external" href="https://ntopology.com/education/">here</a>.</p>
+<p>Previously designed geometries with their design workflow can be found in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">\Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\Idealised</span> <span class="pre">Models\Geometries</span> <span class="pre">&amp;</span> <span class="pre">Templates\nTopology</span></code></p>
+<p>For the idealised (square block) models, and in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">\Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\LV</span> <span class="pre">models\nTopology</span> <span class="pre">Geometries</span> <span class="pre">&amp;</span> <span class="pre">Template</span></code></p>
+<p>For the left ventricular model.</p>
+<p>I would recommend going through the tutorials before working on these files, are they require familiarity with <em>nTopology</em> project tree structure (which nests elements) and lattice structure generation.</p>
+<p>Key component of the design workflow (see files) are</p>
+<ul class="simple">
+<li><p>Type of lattice structure: the structure that gives the best qualitative agreement with trabecular structure is the Voronoi lattice (this is also in line with previous literature works).</p></li>
+<li><p>definition of beam dimension and spacing. These vary linearly in the square block geometries (“Ramp thickness” and “Ramp spacing”). In the LV model, the thickness is constant, while the spacing requires some more work, as at the moment is a by-product of the seed point spacing used to generate the Voronoi structure.</p></li>
+<li><p>Surface mesh: this is the last step that needs to be taken before exporting. I also recommend performing smoothing before remeshing. This remeshing is necessary to ensure that the file is not excessively large (nTop has the tendency to generate extremely large files) and to ensure quality of the surface mesh. Geometries exported after this step are generally immediately compatible with FV, without any further correction. Should a correction be required I recommend using the mesh analysis tools within mesh mixer and/or 3D transvidia.</p></li>
+</ul>
+</section>
+<section id="flow-vision-simulations">
+<h3>Flow Vision Simulations<a class="headerlink" href="#flow-vision-simulations" title="Permalink to this headline">#</a></h3>
+<p>Information regarding the fluid solver – FlowVision – can be found <a class="reference external" href="https://flowvisioncfd.com/en/">here</a>. With documentation and tutorials located <a class="reference external" href="https://flowvisioncfd.com/en/support-page-en/blog-en">here</a>. I highly recommend reading the documentation and executing the tutorials before starting to work on the shared setup files.</p>
+<p>Once you are familiar with FV setup, it should be fairly straightforward to replicate previous simulations, for which all setup files can be found here:</p>
+<p>`\Trabecular flow sims\Idealised Models\FV Simulations Setup and Results\FV_ClientDirectory</p>
+<p><code class="docutils literal notranslate"><span class="pre">\Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\Idealised</span> <span class="pre">Models\FV</span> <span class="pre">Simulations</span> <span class="pre">Setup</span> <span class="pre">and</span> <span class="pre">Results\FV_ClientDirectory</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">\Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\LV</span> <span class="pre">models\FV</span> <span class="pre">Simulations</span> <span class="pre">Setup</span> <span class="pre">and</span> <span class="pre">Results\FV_ClientDirectory</span></code></p>
+<p>Corresponding results are in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">\Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\Idealised</span> <span class="pre">Models\FV</span> <span class="pre">Simulations</span> <span class="pre">Setup</span> <span class="pre">and</span> <span class="pre">Results\FV_ServerDirectory</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">\Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\LV</span> <span class="pre">models\FV</span> <span class="pre">Simulations</span> <span class="pre">Setup</span> <span class="pre">and</span> <span class="pre">Results\FV_ServerDirectory</span></code></p>
+<p><strong>Licence</strong>. FV is a licenced software. We have a total of 40 cores shared with the Xu Group. Of these, 16 are used by Zhongjie Yin (<a class="reference external" href="mailto:z&#46;yin20&#37;&#52;&#48;imperial&#46;ac&#46;uk">z<span>&#46;</span>yin20<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a>) while 24 are dedicated to this project. The current licence expires on Jan 13th 2023. The licence server is managed by ICT. Please get in touch with me (<a class="reference external" href="mailto:s&#46;pirola&#37;&#52;&#48;imperial&#46;ac&#46;uk">s<span>&#46;</span>pirola<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a>) or Zhongjie (<a class="reference external" href="mailto:z&#46;yin20&#37;&#52;&#48;imperial&#46;ac&#46;uk">z<span>&#46;</span>yin20<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a>) should additional access to the licence server need to be arranged.</p>
+<p>The software is pre-installed (including licence set-up and setup for FSI – 1 or 2-way coupling with Abaqus) on workstation ce-spirola-dt (Windows), which can be used for this work. The workstation is located in ACEX 1M17B, Chemical Engineering Department, South Kensington Campus. All files uploaded on SharePoint are also already available on this workstation. Please contact <a class="reference external" href="mailto:s&#46;pirola&#37;&#52;&#48;imperial&#46;ac&#46;uk">s<span>&#46;</span>pirola<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a> (machine owner) to request remote access, (if applicable and needed) admin rights, and for info on how to navigate and use the workstation.</p>
+</section>
+<section id="notes-on-the-simulation-setup">
+<h3>Notes on the simulation setup<a class="headerlink" href="#notes-on-the-simulation-setup" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Simulations conducted with <em>nTopology</em> geometries use a non-Newtonian (Carreau-Yasuda, see code below) blood flow model. This is defined in <code class="docutils literal notranslate"><span class="pre">Substances\?Blood\viscosity</span></code> in the FV setup tree. Here the shear rate is defined as the room mean square of the S-criterion (readily available as a FV variable). This has been confirmed with FV developers. However, I still recommend running a couple of simulations with a known geometry (e.g. backward facing step) to further verify this and the correct implementation of the non-Newtonian model in FV.</p></li>
+</ol>
+<p>Code for the Carreau-Yasuda model:</p>
+<p><em>mu_min=0.0035;</em></p>
+<p><em>mu_max=0.16;</em></p>
+<p><em>lambda=8.2;</em></p>
+<p><em>a=0.64;</em></p>
+<p><em>n=0.2128;</em></p>
+<p><em>mu_min+(mu_max-mu_min)*((1+(lambda*sqrt(S_CRITERION))^a)^((n-1)/a))</em></p>
+<ol class="simple">
+<li><p>Use of trabeculae geometries: trabeculae are designed separately from the fluid volume surface and imported as moving bodies. This is so that a modular setup could be obtained in which trabecular surfaces are easily replaced and an airtight fluid volume is always ensured. Also, this allows for the trabecular surfaces to be treated as separate entities, for which a specific drag force can be calculated. This will also facilitate implementation in Abaqus for FSI, though the overlap between the trabecular and left ventricular surfaces will need to be corrected.</p></li>
+</ol>
+</section>
+</section>
+<section id="preliminary-results-and-recommendations-for-future-work">
+<h2>Preliminary results and recommendations for future work<a class="headerlink" href="#preliminary-results-and-recommendations-for-future-work" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Idealised Trabecular Geometries<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Figures showing the computational domain and summarising key preliminary results are shown in the ppt file <a class="reference external" href="https://imperiallondon.sharepoint.com/:p:/r/sites/CCIgroup/Shared%20Documents/Trabecular%20flow%20sims/SPirola_Summary.pptx?d=wc8b2f4ca9aee49fca2641c7a0a542b52&amp;csf=1&amp;web=1&amp;e=ih2eR3">SPirola_summary.ppt</a> Overall, preliminary results show that increasing the beam dimension and the trabecular compaction causes an increase in drag force. Please note: the fluid domain has been designed to replicate half of the mitral valve opening (indeed a symmetry boundary condition is used at the top wall). Reported results have been simulated with 0.1 m/s inlet velocity. I’d recommend testing the drag force trend under different physiological Re numbers.</p>
+<p>Currently only drag force is calculated. A more robust approach would be to calculate the drag coefficient. To do so, a robust approach for calculation of projected frontal area will need to be developed (please have a look at the theory behind conversion of drag force into drag coefficient).</p>
+</section>
+<section id="lv-trabecular-geometries">
+<h3>LV Trabecular Geometries<a class="headerlink" href="#lv-trabecular-geometries" title="Permalink to this headline">#</a></h3>
+<p>Results available in <code class="docutils literal notranslate"><span class="pre">Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\LV</span> <span class="pre">models\FV</span> <span class="pre">Simulations</span> <span class="pre">Setup</span> <span class="pre">and</span> <span class="pre">Results\FV_ServerDirectory</span></code> serve as a mere proof of feasibility showing designed geometries are compatible with simulations. Indeed, all simulations run so far with this geometry aimed at testing the model geometry. Further work on simulation setup is needed to extract interesting results. Firstly, at the mitral inlet a steady velocity of 0.5 m/s was imposed, while 0 pressure was used at the aortic outlet. A flow waveform typical of a healthy mitral valve should be used at the inlet during diastole, while an aortic waveform should be used at the aortic outlet during systole. This will need to be done while making sure the mass balance is satisfied: I suggest looking into hybrid solutions for boundary conditions allowing to switch between Dirichlet and Newman (i.e., flow and pressure).</p>
+<p>This work should ultimately aim to employ a moving wall approach. All preliminary work done in this direction is summarised in folder “Moving walls in FV”. I suggest watching the video first, then looking at the other files. Please keep the video confidential.</p>
+</section>
+</section>
+<section id="micro-ct-geometries">
+<h2>Micro-CT geometries<a class="headerlink" href="#micro-ct-geometries" title="Permalink to this headline">#</a></h2>
+<p>We received/collected micro-CT imaging data from various sources:</p>
+<ul class="simple">
+<li><p><strong>Great Ormond Street hospital (GOSH)</strong>: data and preliminary simulations (folder “FlowVision”) can be found in <code class="docutils literal notranslate"><span class="pre">\Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\Others\GOSH</span></code>. These data were shared as STL files (we do not have the raw images). Shared files are in <code class="docutils literal notranslate"><span class="pre">\Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\Others\GOSH\Shared</span></code></p></li>
+</ul>
+<p>Other files in the folder are derived from postprocessing of these original files to remove errors in the surface mesh. “3M” stands for 3-matic, “3DTV” 3D Transvidia: these are postprocessing software used to correct the geometries. The CAD files (.SLDPRT) contain the fluid volume domain.</p>
+<ul class="simple">
+<li><p>University of Birmingham: data and preliminary simulations (folder “FlowVision”) can be found in <code class="docutils literal notranslate"><span class="pre">Trabecular</span> <span class="pre">flow</span> <span class="pre">sims\Others\Birmingham</span></code>. The folder “Dicom” contains the raw images, while the folder “DicomRadiant” contains postprocessed images. “.mcs” files are Mimics files containing segmentations of various regions contained in the images. Unfortunately, due to the dimensions of these microCT data, processing the full raw images has proven to be prohibitive, therefore raw images have been cropped to reduce the processing burden, so different files contain different cropped regions.</p></li>
+</ul>
+<p>While we still have these data and corresponding simulation results (preliminary) the necessity to crop the domain for processing and the lack of contrast within the heart chambers has forced us to reconstruct square/rectangular samples of trabeculae. While these have been and are extremely useful to design the synthetic trabeculae (see above), simulations conducted with these geometries are unrealistic and have therefore been paused for the time being.</p>
+<p>Collecting new micro-CT data. Various department in Imperial College London have a micro-CT scan that can potentially be used to collect new CT data with better contrast. One such scan is in the Chem.Eng Department: for more information, please contact Edward (Ed) Bailey (<a class="reference external" href="mailto:edward&#46;bailey&#37;&#52;&#48;imperial&#46;ac&#46;uk">edward<span>&#46;</span>bailey<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a>), Experimental Officer. A new scan is being installed in ICTEM: Michela Noseda (<a class="reference external" href="mailto:m&#46;noseda&#37;&#52;&#48;imperial&#46;ac&#46;uk">m<span>&#46;</span>noseda<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a>) and Lukas Mach (<a class="reference external" href="mailto:l&#46;mach&#37;&#52;&#48;imperial&#46;ac&#46;uk">l<span>&#46;</span>mach<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a> ) should be able to provide more information on this. Also, we have a sample ready to be scanned (contrast should be added): reach out to Richard Jones (<a class="reference external" href="mailto:R&#46;Jones&#37;&#52;&#48;rbht&#46;nhs&#46;uk">R<span>&#46;</span>Jones<span>&#64;</span>rbht<span>&#46;</span>nhs<span>&#46;</span>uk)</a> and Lukas Mach for this.</p>
+</section>
+<section id="living-heart-model">
+<h2>Living heart model<a class="headerlink" href="#living-heart-model" title="Permalink to this headline">#</a></h2>
+<p>Access to the Living heart model (LHM) is subject to successful completion of the LHM agreement by Imperial, which is still pending. After the agreement is signed, we’ll have access to the LHM that can be used to run FEA simulations in Abaqus. The model does not contain trabeculae as yet, but an initial feasibility assessment with the LHM Team concluded that, with training on the 3DEXPERIENCE Platform and its LHM MVA Evaluation Model, trabeculae could be added and simulated.</p>
+<p>To be granted access to this, provided the LHM agreement is in place, please get in touch with <a class="reference external" href="mailto:clint&#46;davies-taylor&#37;&#52;&#48;3ds&#46;com">clint<span>&#46;</span>davies-taylor<span>&#64;</span>3ds<span>&#46;</span>com</a> who acts as a first point of contact between Simulia and Imperial.</p>
+<p>Should you be interested in FEA using the LHM, I’d recommend contacting them sooner rather than later, as our initial assessment was of about 6 weeks of full-time training only to master the 3DEXPERIENCE Platform.</p>
+<p><strong>My contact details</strong></p>
+<p>I am fully available should further details and clarification be needed. You can reach me using my Imperial email <a class="reference external" href="mailto:s&#46;pirola&#37;&#52;&#48;imperial&#46;ac&#46;uk">s<span>&#46;</span>pirola<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a> , and/or my TU Delft email <a class="reference external" href="mailto:s&#46;p&#46;drpirola&#37;&#52;&#48;tudelft&#46;nl">s<span>&#46;</span>p<span>&#46;</span>drpirola<span>&#64;</span>tudelft<span>&#46;</span>nl</a> (which I will probably monitor more frequently as time goes by).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="bibliography.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Bibliography</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Deva Sen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
