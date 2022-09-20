@@ -1,22 +1,43 @@
 # CCIG
 
-This repo contains the files to render the CCIG Grimoire.
+## Table of contents
 
-## Usage
+ 1. [Introduction](#introduction)
+ 2. [Starting a Notebook](#starting-a-notebook)
+ 3. [Building the CCIG Grimoire](#building-the-ccig-grimoire)
+ 4. [Hosting the Grimoire](#hosting-the-grimoire)
+ 5. [Contributors](#contributors)
+ 6. [Credits](#credits)
 
-### Building the book
+## Introduction
 
-If you'd like to develop and/or build the CCIG book, you should:
+This repo contains the files necessary to render the CCIG Grimoire hosted on jupyter books.
+
+## Starting a Notebook
+
+The ''book'' dir; within the main CCIG folder structure, contains the collection of notebooks currently rendered on the CCIG grimoire jupyterbook. Any new notebooks to be added onto this project can be written as .ipynb files (containing python or r scripts) or pure .md files. More information on adding contents to your own notebooks can be found on: <https://jupyterbook.org/en/stable/file-types/markdown.html>.
+
+To make use of this repo you should first create a fork to your own github and then make a clone of your forked repo. Next you can open the repo you added using your chosen IDE . Please follow the relevant instructions for your IDE and OS on working with Git and GitHub repo's - for VS code you can find the instructions here: <https://code.visualstudio.com/docs/editor/versioncontrol#_git-support>.
+
+Once you have set up the repo within your own environment you can start creating and working on your own notebook inside the ''book'' dir. To add a notebook onto the main jupyter book structure first open the _toc.yml file. Then under the chapters section add the name of your notebook prefixed by '-file:' tag (e.g. - file: book/MyNewNoteBook ).
+
+Once you are happy with the edits to your notebook and have added the notebook to the .toc file make sure to push the changes to your Github repo. Finally when you are ready to publish your notebook you can send a pull request to the main CCIG branch. Please make sure you have added comments on what has changed within your notebook when making a pull request as insufficiently commented pull requests may not be accepted. If the changes are accepted to the main repo you will be able to check out your rendered notebook within the CCIG Grimoire at <https://devasenevi.github.io/CCIG/>.
+
+## Building the CCIG Grimoire
+
+If you'd like to develop and/or build the CCIG book locally follow the steps below:
 
 1. Clone this repository
-2. Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
-3. (Optional) Edit the books source files located in the `CCIG/` directory
+2. Run `pip install -r requirements.txt` (Note: It is recommended you do this within a virtual environment such as conda. You can also do 'conda install -r requirements.txt' if you prefer.)
+3. Edit the books source files located in the `CCIG/` directory (Note: This step is optional if you only wish to render the existing book. If you wish to add your own notebook to the Grimoire then proceed to create a .ipynb or .md file as mentioned within the previous section and edit the .toc file as necessary )
 4. Run `jupyter-book clean CCIG/` to remove any existing builds
 5. Run `jupyter-book build CCIG/`
 
 A fully-rendered HTML version of the book will be built in `CCIG/_build/html/`.
 
-### Hosting the book
+## Hosting the Grimoire
+
+The current CCIG Grimoire uses Github pages to host and track changes to itself.
 
 ## Contributors
 
