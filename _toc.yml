@@ -8,6 +8,7 @@ chapters:
   - file: book/markdown
   - file: book/notebooks
   - file: book/bibliography
+  - file: book/Trabeculae_models
 
 # Or you organize the TOC by parts
 
