@@ -77,22 +77,18 @@ The software is pre-installed (including licence set-up and setup for FSI – 1 
   
 >>**Code for the Carreau-Yasuda model:**
 
+`mu\_min=0.0035;_`
 
-```    
-mu\_min=0.0035;_
+`mu\_max=0.16;_`
 
-mu\_max=0.16;_
+`lambda=8.2;_`
 
-lambda=8.2;_
+`a=0.64;_`
 
-a=0.64;_
+`n=0.2128;_`
 
-n=0.2128;_
-
-mu\_min+(mu\_max-mu\_min)\*((1+(lambda\*sqrt(S\_CRITERION))^a)^((n-1)/a))_
-    
-```
-
+`mu\_min+(mu\_max-mu\_min)\*((1+(lambda\*sqrt(S\_CRITERION))^a)^((n-1)/a))_`\
+\
 2. Use of trabeculae geometries: trabeculae are designed separately from the fluid volume surface and imported as moving bodies. This is so that a modular setup could be obtained in which trabecular surfaces are easily replaced and an airtight fluid volume is always ensured. Also, this allows for the trabecular surfaces to be treated as separate entities, for which a specific drag force can be calculated. This will also facilitate implementation in Abaqus for FSI, though the overlap between the trabecular and left ventricular surfaces will need to be corrected.
 
 ## Preliminary results and recommendations for future work
@@ -133,4 +129,4 @@ Should you be interested in FEA using the LHM, I'd recommend contacting them soo
 
 ## Contact details
 
-I am fully available should further details and clarification be needed. You can reach me using my Imperial email [s.pirola@imperial.ac.uk](<mailto:s.pirola@imperial.ac.uk>) , and/or my TU Delft email [s.p.drpirola@tudelft.nl](<mailto:s.p.drpirola@tudelft.nl>) (which I will probably monitor more frequently as time goes by).
+I am fully available should further details and clarification be needed. You can reach me using my Imperial email [s.pirola@imperial.ac.uk](<mailto:s.pirola@imperial.ac.uk>) , and/or my TU Delft email [s.p.drpirola@tudelft.nl](<mailto:s.p.drpirola@tudelft.nl>) which I will probably monitor more frequently as time goes by.
