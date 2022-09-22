@@ -1,4 +1,4 @@
-# Trabeculae Models
+# Trabecular flow modelling
 
 ## Table of contents
 
@@ -11,9 +11,9 @@
 
 ---
 
-## General notes
+## Introduction
 
-All files needed to replicate my results are in the [Trabecular flow sims](<https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared Documents/Trabecular flow sims?csf=1&web=1&e=m2FKtw>) folder on SharePoint. All files, folders, paths I refer to in this document start from that folder.
+All files needed to replicate my results are in the [Trabecular flow sims](<https://imperiallondon.sharepoint.com/:f:/r/sites/CCIgroup/Shared%20Documents/Trabecular%20flow%20sims?csf=1&web=1&e=m2FKtw>) folder on SharePoint. All files, folders, paths I refer to in this document start from that folder.
 
 ## Idealised trabecular geometries
 
@@ -25,11 +25,11 @@ These have been created using 3 main softwares:
 
 ### Lattice (trabeculae) structures in nTopology
 
-Information on the software can be found [here](<https://ntopology.com/>).
+Information on the software can be found [nTopology](<https://ntopology.com/>).
 
-[Here](<https://ntopology.com/upcoming-and-resources/>), and especially under "Engineering design", you can find a useful video tutorial and webinars that are quite useful to learn how to operate *nTopology* and build lattice structures.
+There are [resources](<https://ntopology.com/upcoming-and-resources/>), and especially under "Engineering design", you can find a useful video tutorial and webinars that are quite useful to learn how to operate *nTopology* and build lattice structures.
 
-Licence: while the software is commercial, academics and researchers might be eligible for free licences (I have received and worked with one of these). More info [here](<https://ntopology.com/education/>).
+*Licence*: while the software is commercial, academics and researchers might be eligible for free licences (I have received and worked with one of these). More info at [nTopology](<https://ntopology.com/education/>).
 
 Previously designed geometries with their design workflow can be found in:
 
@@ -57,8 +57,6 @@ Once you are familiar with FV setup, it should be fairly straightforward to repl
 
 `\Trabecular flow sims\Idealised Models\FV Simulations Setup and Results\FV_ClientDirectory`
 
-`\Trabecular flow sims\Idealised Models\FV Simulations Setup and Results\FV_ClientDirectory`
-
 `\Trabecular flow sims\LV models\FV Simulations Setup and Results\FV_ClientDirectory`
 
 Corresponding results are in:
@@ -74,21 +72,23 @@ The software is pre-installed (including licence set-up and setup for FSI – 1 
 ### Notes on the simulation setup
 
 1. Simulations conducted with *nTopology* geometries use a non-Newtonian (Carreau-Yasuda, see code below) blood flow model. This is defined in `Substances\?Blood\viscosity` in the FV setup tree. Here the shear rate is defined as the room mean square of the S-criterion (readily available as a FV variable). This has been confirmed with FV developers. However, I still recommend running a couple of simulations with a known geometry (e.g. backward facing step) to further verify this and the correct implementation of the non-Newtonian model in FV.
-  
->>**Code for the Carreau-Yasuda model:**
 
-`mu\_min=0.0035;_`
+**Code for the Carreau-Yasuda model:**
 
-`mu\_max=0.16;_`
+$\mu_{min}$=0.0035;
 
-`lambda=8.2;_`
+$\mu_{max}$=0.16;
 
-`a=0.64;_`
+$\lambda$=8.2;
 
-`n=0.2128;_`
+$\alpha$=0.64;
 
-`mu\_min+(mu\_max-mu\_min)\*((1+(lambda\*sqrt(S\_CRITERION))^a)^((n-1)/a))_`\
-\
+$n$=0.2128;
+
+$$
+\mu_{min} + (\mu_{max} - \mu_{min}) \times (1+(\lambda \sqrt{\dot{\gamma}})^a)^\frac{n-1}{a}
+$$
+
 2. Use of trabeculae geometries: trabeculae are designed separately from the fluid volume surface and imported as moving bodies. This is so that a modular setup could be obtained in which trabecular surfaces are easily replaced and an airtight fluid volume is always ensured. Also, this allows for the trabecular surfaces to be treated as separate entities, for which a specific drag force can be calculated. This will also facilitate implementation in Abaqus for FSI, though the overlap between the trabecular and left ventricular surfaces will need to be corrected.
 
 ## Preliminary results and recommendations for future work
@@ -109,11 +109,11 @@ This work should ultimately aim to employ a moving wall approach. All preliminar
 
 We received/collected micro-CT imaging data from various sources:
 
-- **Great Ormond Street hospital (GOSH)**: data and preliminary simulations (folder "FlowVision") can be found in `\Trabecular flow sims\Others\GOSH`. These data were shared as STL files (we do not have the raw images). Shared files are in `\Trabecular flow sims\Others\GOSH\Shared`
+- *Great Ormond Street hospital (GOSH)*: data and preliminary simulations (folder "FlowVision") can be found in `\Trabecular flow sims\Others\GOSH`. These data were shared as STL files (we do not have the raw images). Shared files are in `\Trabecular flow sims\Others\GOSH\Shared`
 
 Other files in the folder are derived from postprocessing of these original files to remove errors in the surface mesh. "3M" stands for 3-matic, "3DTV" 3D Transvidia: these are postprocessing software used to correct the geometries. The CAD files (.SLDPRT) contain the fluid volume domain.
 
-- University of Birmingham: data and preliminary simulations (folder "FlowVision") can be found in `Trabecular flow sims\Others\Birmingham`. The folder "Dicom" contains the raw images, while the folder "DicomRadiant" contains postprocessed images. ".mcs" files are Mimics files containing segmentations of various regions contained in the images. Unfortunately, due to the dimensions of these microCT data, processing the full raw images has proven to be prohibitive, therefore raw images have been cropped to reduce the processing burden, so different files contain different cropped regions.
+- *University of Birmingham*: data and preliminary simulations (folder "FlowVision") can be found in `Trabecular flow sims\Others\Birmingham`. The folder "Dicom" contains the raw images, while the folder "DicomRadiant" contains postprocessed images. ".mcs" files are Mimics files containing segmentations of various regions contained in the images. Unfortunately, due to the dimensions of these microCT data, processing the full raw images has proven to be prohibitive, therefore raw images have been cropped to reduce the processing burden, so different files contain different cropped regions.
 
 While we still have these data and corresponding simulation results (preliminary) the necessity to crop the domain for processing and the lack of contrast within the heart chambers has forced us to reconstruct square/rectangular samples of trabeculae. While these have been and are extremely useful to design the synthetic trabeculae (see above), simulations conducted with these geometries are unrealistic and have therefore been paused for the time being.
 
