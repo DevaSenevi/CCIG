@@ -5,7 +5,8 @@ format: jb-book
 root: index
 chapters:
   - file: book/analysis_steps 
-  - file: book/trabeculae_models 
+  - file: book/trabeculae_models
+  - file: book/4Dsurvival_PH/4Dsurvival_ph
   - file: book/notebooks
   - file: book/markdown
   - file: book/testMyST
