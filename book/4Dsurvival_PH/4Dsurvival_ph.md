@@ -1,4 +1,3 @@
- 
 
 # 4DSurvival in PH
 Neural network that predicts survival using mesh motion data
@@ -216,7 +215,7 @@ Below are brief descriptions of the analyses carried out in the Supplementary In
 
   - Script for training and validating the network:
 
-`~/cardiac/for_ghalib/backup/home/gbello@isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello@isd.csc.mrc.ac.u) k/gbello/RWorkspace1/CVtests_NMIRevision_fresh_codeOcean_wstd_nestedCV_xyznotdisp.py`
+    `~/cardiac/for_ghalib/backup/home/gbello@isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello@isd.csc.mrc.ac.u) k/gbello/RWorkspace1/CVtests_NMIRevision_fresh_codeOcean_wstd_nestedCV_xyznotdisp.py`
 
   - Input data to the script: this contains the raw coordinate data, and also the corresponding survival outcome data:
 
