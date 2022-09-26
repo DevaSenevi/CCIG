@@ -27,7 +27,7 @@ Once you are happy with the edits to your notebook and have added the notebook t
 
 If you'd like to develop and/or build the CCIG book locally follow the steps below:
 
-1. Clone this repository.&nbsp;
+1. Clone this repository.
    
 2. Run `pip install -r requirements.txt` (Note: It is recommended you do this within a virtual environment such as conda.)
    1. To run the above command you will need to have python installed within your virtual env.
