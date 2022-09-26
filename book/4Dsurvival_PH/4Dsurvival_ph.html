@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4DSurvival in PH &#8212; The CCIG Grimoire</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://DevaSenevi.github.io/CCIG/book/4Dsurvival_PH/4Dsurvival_ph.html" />
+    <link rel="shortcut icon" href="../../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Content with notebooks" href="../notebooks.html" />
+    <link rel="prev" title="Trabecular flow modelling" href="../trabeculae_models.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The CCIG Grimoire</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis_steps.html">
+   Association analysis between risk factors and cardiovascular age-delta
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../trabeculae_models.html">
+   Trabecular flow modelling
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4DSurvival in PH
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testMyST.html">
+   Extend CommonMark with roles and directives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG/issues/new?title=Issue%20on%20page%20%2Fbook/4Dsurvival_PH/4Dsurvival_ph.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG/edit/master/book/4Dsurvival_PH/4Dsurvival_ph.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/book/4Dsurvival_PH/4Dsurvival_ph.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mesh-motion-data">
+   1. Mesh motion data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#processing-mesh-motion-data-for-use-in-4dsurvival">
+   2. Processing mesh motion data for use in 4DSurvival
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-and-validating-4dsurvival">
+   3. Training and Validating 4DSurvival
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-and-validating-conventional-parameter-model">
+   4. Training and Validating conventional parameter model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-and-validating-strain-model">
+   5. Training and Validating strain model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-and-validating-3d-all-covariates-parameter-model">
+   6. Training and Validating ‘3D + all covariates’ parameter model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-comparisons">
+   7. Model Comparisons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-interpretation">
+   8. Model Interpretation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supplementary-material">
+   9. Supplementary Material
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-down-sampling-of-the-3d-mesh">
+     (a) Down-sampling of the 3D mesh
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-using-coordinate-data-for-prediction">
+     (b)  Using coordinate data for prediction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-cross-validation-vs-bootstrap-internal-validation">
+     (c)  Cross-validation vs. Bootstrap internal validation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programming-environment">
+   10. Programming Environment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-r">
+     Working with R
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-python">
+     Working with Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>4DSurvival in PH</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mesh-motion-data">
+   1. Mesh motion data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#processing-mesh-motion-data-for-use-in-4dsurvival">
+   2. Processing mesh motion data for use in 4DSurvival
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-and-validating-4dsurvival">
+   3. Training and Validating 4DSurvival
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-and-validating-conventional-parameter-model">
+   4. Training and Validating conventional parameter model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-and-validating-strain-model">
+   5. Training and Validating strain model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-and-validating-3d-all-covariates-parameter-model">
+   6. Training and Validating ‘3D + all covariates’ parameter model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-comparisons">
+   7. Model Comparisons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-interpretation">
+   8. Model Interpretation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supplementary-material">
+   9. Supplementary Material
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-down-sampling-of-the-3d-mesh">
+     (a) Down-sampling of the 3D mesh
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-using-coordinate-data-for-prediction">
+     (b)  Using coordinate data for prediction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-cross-validation-vs-bootstrap-internal-validation">
+     (c)  Cross-validation vs. Bootstrap internal validation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programming-environment">
+   10. Programming Environment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-r">
+     Working with R
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-python">
+     Working with Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="dsurvival-in-ph">
+<h1>4DSurvival in PH<a class="headerlink" href="#dsurvival-in-ph" title="Permalink to this headline">#</a></h1>
+<p>Neural network that predicts survival using mesh motion data</p>
+<section id="mesh-motion-data">
+<h2>1. Mesh motion data<a class="headerlink" href="#mesh-motion-data" title="Permalink to this headline">#</a></h2>
+<p>Mesh motion data can be thought of as snapshots of the right ventricle (RV) at 20 time points in the cardiac cycle. Motion of the RV is described by these 20 meshes. Each mesh is a point cloud consisting of (usually) 18,028 points (henceforth referred to as vertices), each representing some anatomical location on the heart:</p>
+<p><img alt="" src="../../_images/image1.png" /></p>
+<p>Each mesh is described by a text file that simply lists the Cartesian (x,y,z) coordinates of each of its 18,028 vertices. Below is a short excerpt of a <strong>mesh coordinate file</strong>:</p>
+<p><img alt="" src="../../_images/image2.png" /></p>
+<p>As the figure shows, each row in the text file represents the x,y,z coordinates of a vertex in the mesh.</p>
+<p>As mentioned, the motion of the RV through one cardiac cycle is represented by 20 meshes, each one akin to a ‘snapshot’ of the RV at some point in the cardiac cycle. Therefore, for each subject, there will be 20 meshes, and their corresponding coordinate files are named as follows: <code class="docutils literal notranslate"><span class="pre">RV_fr00.txt</span></code> (mesh 0), <code class="docutils literal notranslate"><span class="pre">RV_fr01.txt</span></code> (mesh 1), <code class="docutils literal notranslate"><span class="pre">RV_fr02.txt</span></code> (mesh 2), etc. all the way to <code class="docutils literal notranslate"><span class="pre">RV_fr19.txt</span></code> (mesh 19). For each subject, these files are stored in a directory called ‘<strong>motion</strong>’, which is a sub-directory of a folder named with the subject’s ID. The mesh data for all subjects are stored in the following folders on the cardiac$ drive:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/PHpatchmatchSegmentation/BRIDGE_Training_Group</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/PhpatchmatchSegmentation/BRIDGE_Test_Group</span></code></p>
+<p>Navigate to any one of these folders. You should be able to see a list of sub-folders, each named with an alphanumeric code (e.g. PHAB0130A). You should see something like below:</p>
+<p><img alt="image3" src="../../_images/image3.jpeg" /></p>
+<p>Each folder is named after an individual subject/patient ID. These alphanumeric IDs are random IDs assigned to the patients to preserve anonymity. Under each subject’s folder, there should be a sub-folder called ‘motion’, which contains the mesh coordinate files. See below for an example:</p>
+<p><img alt="image4" src="../../_images/image4.jpeg" /></p>
+<p>In order to train 4DSurvival, the data from these mesh coordinate files will be used. In a later section, we will describe how to read the data from these files and construct a mesh motion matrix that can be fed into the 4DSurvival network. Note that 4DSurvival also requires survival outcome data for training. This will be data on each subject providing the length of their observation period (starting from the date of MRI scan) and their status (dead/alive) at the end of the observation period. For all patients, this information is stored under the following directory:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/BRIDGE/BRIDGE</span> <span class="pre">Patients</span></code></p>
+<p>The spreadsheets containing the information are BRIDGE Training Group.xlsx and BRIDGE Test Group.xlsx. <strong>NOTE: these Excel files are password-protected. Please contact Ghalib Bello (<a class="reference external" href="mailto:ghalibbello&#37;&#52;&#48;gmail&#46;com">ghalibbello<span>&#64;</span>gmail<span>&#46;</span>com</a>) or Dr. Timothy Dawes (<a class="reference external" href="mailto:tim&#46;dawes&#37;&#52;&#48;imperial&#46;ac&#46;uk">tim<span>&#46;</span>dawes<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a>) for the password.</strong> In these files, there is also data on covariates such as age, sex, WHO functional class, etc.</p>
+</section>
+<section id="processing-mesh-motion-data-for-use-in-4dsurvival">
+<h2>2. Processing mesh motion data for use in 4DSurvival<a class="headerlink" href="#processing-mesh-motion-data-for-use-in-4dsurvival" title="Permalink to this headline">#</a></h2>
+<p>The 4DSurvival network is constructed and trained in Python. The mesh motion data is fed into this network as a large matrix of size <em>n</em> x <em>p</em> (where <em>n</em> is the number of subjects and <em>p</em> is the number of features). The number of features <em>p</em> is typically 11,514 (=19 timepoints x 202 vertices x 3 coordinates [x, y and z]). Note, we down-sample the meshes (from 18,028 vertices down to 202) before using them in 4DSurvival. See the NMI paper for a more detailed description of the input data format.</p>
+<p>The python scripts below are used to process the mesh motion data, and also to select the subset of patients we used in the NMI paper. Please peruse them to understand how they read, process and downsample the data:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/mesh_sandbox_cleaned.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/mesh_motiondescriptor_PHAB0267Adecmesh_CTEPH302.py</span></code></p></li>
+</ol>
+<p>The end-product of these scripts is a pickle file (<a class="reference external" href="https://docs.python.org/3/library/pickle.html">https://docs.python.org/3/library/pickle.html</a>) that can be found in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/mesh_motiondescriptor_PHAB0267Adecmesh_CTEPH302.pkl</span></code></p>
+<p>which contains:</p>
+<ol class="simple">
+<li><p>processed mesh motion data</p></li>
+<li><p>survival outcome data</p></li>
+<li><p>list of subject IDs</p></li>
+</ol>
+</section>
+<section id="training-and-validating-4dsurvival">
+<h2>3. Training and Validating 4DSurvival<a class="headerlink" href="#training-and-validating-4dsurvival" title="Permalink to this headline">#</a></h2>
+<p>The training and validation of 4DSurvival is carried out in a Python script that reads the data from <code class="docutils literal notranslate"><span class="pre">mesh_motiondescriptor_PHAB0267Adecmesh_CTEPH302.pkl</span></code> (from Section 2 above). The Python script can be found at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/CVtests_CTEPH_SSARVandconvCOMP_bootstrap_corr2_PHAB0267</span> <span class="pre">Adecmesh_NMI.py</span></code></p>
+<p>The output of this script (containing training and validation statistics, predicted scores, information on which subjects were selected in each bootstrap sample, etc.) is stored in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/CVtests_CTEPH_SSAERVandconvCOMP_bootstrap_corrPHAB0267A</span> <span class="pre">decmesh_NMI_fullrun_evals50_B100_wAlpha_pickle2.pkl</span></code></p>
+<p>In addition, the saved model is located in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/CVtests_CTEPH_SSAERVandconvCOMP_bootstrap_corrPHAB0267A</span> <span class="pre">decmesh_fullrun_saved_model.h5</span></code></p>
+<p>This saved model can be used later to generate predictions for new patients, or to study the network weights and layers in more detail.</p>
+<p>The neural network architecture is a supervised autoencoder, constructed using the deep learning library <em>Keras</em> (<a class="reference external" href="https://keras.io/">https://keras.io</a>). For full details about the network, and the training and validation technique, see the NMI paper and also the Jupyter notebooks in <a class="reference external" href="https://github.com/UK-Digital-Heart-Project/4Dsurvival/tree/master/demo">https://github.com/UK-Digital-</a> <a class="reference external" href="https://github.com/UK-Digital-Heart-Project/4Dsurvival/tree/master/demo">Heart-Project/4Dsurvival/tree/master/demo</a>.</p>
+</section>
+<section id="training-and-validating-conventional-parameter-model">
+<h2>4. Training and Validating conventional parameter model<a class="headerlink" href="#training-and-validating-conventional-parameter-model" title="Permalink to this headline">#</a></h2>
+<p>As an alternative to using detailed 3D mesh motion to predict survival, simple conventional parameters (derived from a Cardiac MRI scan) could also be used, e.g. RV Ejection Fraction (RVEF), RV End Diastolic Volume (RVEDV) and RV End Systolic Volume (RVESV). We will later (in a subsequent section) compare the predictive performance of such a model to that of 4DSurvival which uses high-resolution meshes. See NMI paper for details.</p>
+<p>The conventional parameter model is trained using a <a class="reference external" href="https://en.wikipedia.org/wiki/Proportional_hazards_model#The_Cox_model">Cox Proportional Hazards Model</a>, a type of statistical model for handling censored time-to-event data. The script that implements this (trains and validates the model) is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/CodeOcean/code/lib/demo_validate_2018Dec17.py</span></code></p>
+<p>The output of this script (containing training and validation statistics, predicted scores, etc.) is stored in a pickle file located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/bootout_conv_B100_2018Dec17_298451.pkl</span></code></p>
+</section>
+<section id="training-and-validating-strain-model">
+<h2>5. Training and Validating strain model<a class="headerlink" href="#training-and-validating-strain-model" title="Permalink to this headline">#</a></h2>
+<p>As an alternative to using detailed mesh motion to predict survival, mesh strain parameters can instead be used (see NMI paper for more details). A model utilizing just strain parameters is trained using a Cox Proportional Hazards Model. The script that implements this (trains and validates the model) is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/CodeOcean/code/lib/demo_validate_Strain.py</span></code></p>
+<p>The output of this script (containing training and validation statistics, predicted scores, etc.) is stored in a pickle file located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/strain_demo_validate_run1.pkl</span></code></p>
+</section>
+<section id="training-and-validating-3d-all-covariates-parameter-model">
+<h2>6. Training and Validating ‘3D + all covariates’ parameter model<a class="headerlink" href="#training-and-validating-3d-all-covariates-parameter-model" title="Permalink to this headline">#</a></h2>
+<p>We combined the 3D mesh motion data with covariates into the same model. See NMI paper for more details.</p>
+<p>The script for training and validating this model is located in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/CVtests_CTEPH_CoxwNet_boot_4NMIrevision_CoxwCovs4_corr.py</span></code></p>
+<p>The output of this script (containing training and validation statistics, predicted scores, etc.) is stored in a pickle file located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/CVtests_CTEPH_CoxwNet_boot_4NMIrevision_CoxwCovs4_run4.pkl</span></code></p>
+</section>
+<section id="model-comparisons">
+<h2>7. Model Comparisons<a class="headerlink" href="#model-comparisons" title="Permalink to this headline">#</a></h2>
+<p>The above models (Sections 4-6) are compared to 4DSurvival with respect to predictive accuracy (see NMI paper for details):</p>
+<ul class="simple">
+<li><p>4DSurvival vs. Conventional Parameter model</p></li>
+<li><p>4DSurvival vs. Strain parameter model</p></li>
+<li><p>4DSurvival vs. ‘3D + all covariates’ model</p></li>
+</ul>
+<p>These model comparisons are carried out in the following R script:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/CVtests_CTEPH_SSARVandconvCOMP_bootstrap_corr_POSTPROCE</span> <span class="pre">SSING_post_wlogrank_newNMIrevision_documentation.R</span></code></p>
+</section>
+<section id="model-interpretation">
+<h2>8. Model Interpretation<a class="headerlink" href="#model-interpretation" title="Permalink to this headline">#</a></h2>
+<p>Figures 3A and 3B in the paper show visualizations of the latent layer in the 4Dsurvival network and a saliency map describing the contribution of various areas of the RV to overall predictive accuracy (see NMI paper for more details). Figures 3A and 3B can be reproduced using the following script:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/Latent_Space_Interpolation_clean.py</span></code></p>
+<p>In Figure 3A, in addition to the scatter plot, there are 2 RV meshes indicating healthy and unhealthy subjects. These can be viewed in Paraview. Open Paraview then File &gt; Load State. In the file selection window, open file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/PaperPlotData_Figure3A_UnhealthyHealthy_PHAH1207Aind10P</span> <span class="pre">HKT0473Aind163_allfrmags_mean</span> <span class="pre">wlogcolorscale_UPDforLinuxMachine.p</span> <span class="pre">vsm</span></code></p>
+<p>A dialog box <strong>might</strong> open asking to ‘Load State Options’. Choose ‘Use File Names From State’. The following should show:</p>
+<p><img alt="image5" src="../../_images/image5.jpeg" /></p>
+<p>In the Pipeline Browser, element PH* represents the RVs of the healthy and unhealthy hearts. To toggle between healthy and unhealthy RV, use the ‘Previous Frame’ and ‘Next Frame’ buttons on the top panel.</p>
+<p>Figure 3B is also generated by the aforementioned Python script (<code class="docutils literal notranslate"><span class="pre">Latent_Space_Interpolation_clean.py</span></code>). The resulting saliency map can be viewed in Paraview (following the same procedure above) using the saved state:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/PaperPlotData_ColorScale_SaveState_UPDforLinuxMachine.pvsm</span></code></p>
+<p><img alt="image6" src="../../_images/image6.jpeg" /></p>
+</section>
+<section id="supplementary-material">
+<h2>9. Supplementary Material<a class="headerlink" href="#supplementary-material" title="Permalink to this headline">#</a></h2>
+<p>Below are brief descriptions of the analyses carried out in the Supplementary Information section of the NMI paper. See the paper for descriptions of these analyses:</p>
+<section id="a-down-sampling-of-the-3d-mesh">
+<h3>(a) Down-sampling of the 3D mesh<a class="headerlink" href="#a-down-sampling-of-the-3d-mesh" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>DL network fitted on data consisting of meshes with 101 vertices:</p>
+<ul>
+<li><p>Script for training and validating the network:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u)</span> <span class="pre">k/gbello/RWorkspace1/CVtests_NMIRevision_fresh_codeOcean_wstd_nestedCVnew_vtx100.py</span></code></p>
+</li>
+<li><p>Input data to the script: this contains the motion data for the 101-vertex meshes, and also the corresponding survival outcome data:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/RWorkspace1/mesh_motiondescriptor_PHAB0267Adecmesh_CTEPH302_vtx100_pickle2.pkl</span></code></p>
+</li>
+<li><p>Output data: The output of this script (containing training and validation statistics, predicted scores, etc.) is stored in a pickle file located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u)</span> <span class="pre">k/gbello/RWorkspace1/CVtests_NMIRevision_fresh_CodeOcean_wstd_nestedCV_vtx100_run1_pickle2.pkl</span></code></p>
+</li>
+</ul>
+</li>
+<li><p>DL network fitted on data consisting of meshes with 501 vertices*:</p>
+<ul>
+<li><p>Script for training and validating the network:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u)</span> <span class="pre">k/gbello/RWorkspace1/CVtests_NMIRevision_fresh_codeOcean_wstd_nestedCV_vtx500.py</span></code></p>
+</li>
+<li><p>Input data to the script: this contains the motion data for the 501-vertex meshes, and also the corresponding survival outcome data:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u)</span> <span class="pre">k/gbello/RWorkspace1/mesh_motiondescriptor_PHAB0267Adecm</span> <span class="pre">esh_CTEPH302_vtx500_pickle2.pkl</span></code></p>
+</li>
+<li><p>Output data: The output of this script (containing training and validation statistics, predicted scores, etc.) is stored in a pickle file located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u)</span> <span class="pre">k/gbello/RWorkspace1/CVtests_NMIRevision_fresh_CodeOcean_wstd_nestedCV_vtx500_run1_pickle2.pkl</span></code></p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="b-using-coordinate-data-for-prediction">
+<h3>(b)  Using coordinate data for prediction<a class="headerlink" href="#b-using-coordinate-data-for-prediction" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>DL network fitted using coordinate data (rather than displacement data)*:</p>
+<ul>
+<li><p>Script for training and validating the network:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u)</span> <span class="pre">k/gbello/RWorkspace1/CVtests_NMIRevision_fresh_codeOcean_wstd_nestedCV_xyznotdisp.py</span></code></p>
+</li>
+<li><p>Input data to the script: this contains the raw coordinate data, and also the corresponding survival outcome data:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u)</span> <span class="pre">k/gbello/RWorkspace1/mesh_motiondescriptor_PHAB0267Adecm</span> <span class="pre">esh_CTEPH302_xyznotdisp_pickle2.pkl</span></code></p>
+</li>
+<li><p>Output data: The output of this script (containing training and validation statistics, predicted scores, etc.) is stored in a pickle file located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u](mailto:~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.u)</span> <span class="pre">k/gbello/RWorkspace1/CVtests_NMIRevision_fresh_CodeOcean_wstd_nestedCV_xyznotdisp_run1_pickle2.pkl</span></code></p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="c-cross-validation-vs-bootstrap-internal-validation">
+<h3>(c)  Cross-validation vs. Bootstrap internal validation<a class="headerlink" href="#c-cross-validation-vs-bootstrap-internal-validation" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Script that trains and validates 4DSurvival using nested cross-validation (rather than bootstrap):</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/g</span> <span class="pre">bello/RWorkspace1/CVtests_NMIRevision_fresh_codeOcean_wstd_</span> <span class="pre">nestedCVnew5_reptest.py</span></code></p>
+</li>
+<li><p>Input data to the script:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/g</span> <span class="pre">bello/RWorkspace1/mesh_motiondescriptor_PHAB0267Adecmesh_CT</span> <span class="pre">EPH302_pickle2.pkl</span></code></p>
+</li>
+<li><p>Output data: The output of this script (containing training and validation statistics, predicted scores, etc.) is stored in a pickle file located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/g</span> <span class="pre">bello/RWorkspace1/CVtests_NMIRevision_fresh_CodeOcean_wstd_</span> <span class="pre">nestedCVnew_run5_reptest_pickle2.pkl</span></code></p>
+</li>
+</ul>
+<p>All these models in the Supplementary Materials section were validated using a model validation approach called nested cross-validation (see NMI paper for more details). Model predictive accuracy is computed in the following R script:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1/nestedCV_compare_newNMIrevision_documentation.R</span></code></p>
+</section>
+</section>
+<section id="programming-environment">
+<h2>10. Programming Environment<a class="headerlink" href="#programming-environment" title="Permalink to this headline">#</a></h2>
+<p>All of my code is written in Python and R. Data wrangling was done mostly with R and Python (largely using Python libraries pandas and NumPy). All the scripts are stored under:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/for_ghalib/backup/home/gbello&#64;isd.csc.mrc.ac.uk/gbello/R</span> <span class="pre">Workspace1</span></code></p>
+<p>The bulk of the work was done in Windows and a GPU-enabled Linux machine. Additional work was done on our high-performance clusters Eddie and Marvin. These systems (both Linux-based) can be accessed from local PCs onsite, e.g. from a Windows machine, Marvin can be accessed by following the instructions found in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/cardiac/Marvin/How</span> <span class="pre">to</span> <span class="pre">Start</span> <span class="pre">Marvin.docx</span></code></p>
+<p>From a local Linux machine on-site, Eddie or Marvin can be accessed via:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">&lt;username&gt;&#64;eddie</span> <span class="pre">ssh</span> <span class="pre">&lt;username&gt;&#64;marvin</span></code></p>
+<p>where <username> is your username on these systems.</p>
+<section id="working-with-r">
+<h3>Working with R<a class="headerlink" href="#working-with-r" title="Permalink to this headline">#</a></h3>
+<p>The program Rstudio provide self-contained development environments for writing, testing and running R code. Package installation is straightforward:</p>
+<p><code class="docutils literal notranslate"><span class="pre">install.packages(‘&lt;package</span> <span class="pre">name&gt;’)</span></code></p>
+</section>
+<section id="working-with-python">
+<h3>Working with Python<a class="headerlink" href="#working-with-python" title="Permalink to this headline">#</a></h3>
+<p>For this work, it helps to set up Python within a virtual environment. There are different software packages for setting up virtual environments. Below is an example using one such software (Miniconda). We assume the operating system is Linux.</p>
+<ol class="simple">
+<li><p>Download Miniconda for Linux (<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a>). The download should be a bash script (with .sh extension)</p></li>
+<li><p>To set up Miniconda, follow the instructions on this page (<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/linux.html">https://conda.io/projects/conda/en/latest/user-guide/install/linux.html</a>)</p></li>
+<li><p>The next step would be to create a new environment, which can be done following instructions at <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands">https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-</a> <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands">environments.html#creating-an-environment-with-commands</a>. The environment can be set up with some version of Python 3.x (e.g. Python 3.5).</p></li>
+<li><p>If you haven’t already, activate the new environment by: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">&lt;the</span> <span class="pre">new</span> <span class="pre">environment</span> <span class="pre">name&gt;</span></code></p></li>
+<li><p>Within the new environment, it is straightforward to install required Python libraries (e.g. numpy, pandas) using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;library</span> <span class="pre">name&gt;</span></code> or using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;library</span> <span class="pre">name&gt;</span></code>.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/4Dsurvival_PH"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../trabeculae_models.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Trabecular flow modelling</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../notebooks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Content with notebooks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Deva Sen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
