@@ -27,11 +27,11 @@ Once you are happy with the edits to your notebook and have added the notebook t
 
 If you'd like to develop and/or build the CCIG book locally follow the steps below:
 
-1. Clone this repository
+1. Clone this repository./
 2. Run `pip install -r requirements.txt` (Note: It is recommended you do this within a virtual environment such as conda.)
    1. To run the above command you will need to have python installed within your virtual env.
-   2. The best way to do this is to create an env with python and pip in the first place. To do that run 'conda create -n python=<python_version_number> <name_of_your_env> pip' (e.g. conda create -n python=3.7 yourenv pip)
-   3. Once the env is created you can run 'conda activate <name_of_your_env>' to activate your env
+   2. The best way to do this is to create an env with python and pip in the first place. To do that run 'conda create -n python=python_version_number name_of_your_env pip' (e.g. conda create -n python=3.7 yourenv pip)
+   3. Once the env is created you can run 'conda activate name_of_your_env' to activate your env
    4. Now you are ready to install the requirments.txt (Make sure your active directory is the directory which houses the CCIG folder e.g. ~/user/TheJupyterBookDir/CCIG/)
 3. Now you can edit the books source files located in the `CCIG/` directory (Note: This step is optional if you only wish to render the existing book. If you wish to add your own notebook to the Grimoire then proceed to create a .ipynb or .md file as mentioned within the previous section and edit the .toc file as necessary )
 4. Next set the active directory to the directory right above the current directory (i.e. instead of ../TheJupyterBookDir/CCIG/ it shoud be pointing to ../TheJupyterBookDir/)
