@@ -1,0 +1,1558 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Syntax Extensions &#8212; The CCIG Grimoire</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://DevaSenevi.github.io/CCIG/book/references/syntaxExtensions.html" />
+    <link rel="shortcut icon" href="../../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="prev" title="Extend CommonMark with roles and directives" href="testMyST.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The CCIG Grimoire</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Project documentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../cardio_age/age_intro.html">
+   Cardiovascular ageing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cardio_age/analysis_steps.html">
+     Association analysis between risk factors and cardiovascular age-delta
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../trabeculae_models.html">
+   Trabecular flow modelling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4Dsurvival_PH/4Dsurvival_ph.html">
+   4DSurvival in PH
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testMyST.html">
+   Extend CommonMark with roles and directives
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Syntax Extensions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG/issues/new?title=Issue%20on%20page%20%2Fbook/references/syntaxExtensions.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/DevaSenevi/CCIG/edit/master/book/references/syntaxExtensions.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/book/references/syntaxExtensions.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#typography">
+   Typography
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strikethrough">
+   Strikethrough
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#math-shortcuts">
+   Math shortcuts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dollar-delimited-math">
+     Dollar delimited math
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math-in-other-block-elements">
+     Math in other block elements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#direct-latex-math">
+     Direct LaTeX Math
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathjax-and-math-parsing">
+     Mathjax and math parsing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linkify">
+   Linkify
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#substitutions-with-jinja2">
+   Substitutions (with Jinja2)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substitutions-and-urls">
+     Substitutions and URLs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-fences-using-colons">
+   Code fences using colons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#admonition-directives">
+   Admonition directives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auto-generated-header-anchors">
+   Auto-generated header anchors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anchor-slug-structure">
+     Anchor slug structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspect-the-links-that-will-be-created">
+     Inspect the links that will be created
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition-lists">
+   Definition Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-lists">
+   Task Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#field-lists">
+   Field Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#images">
+   Images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown-figures">
+   Markdown Figures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#html-admonitions">
+   HTML Admonitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntax-amsmath">
+   Direct LaTeX Math
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Syntax Extensions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#typography">
+   Typography
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strikethrough">
+   Strikethrough
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#math-shortcuts">
+   Math shortcuts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dollar-delimited-math">
+     Dollar delimited math
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math-in-other-block-elements">
+     Math in other block elements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#direct-latex-math">
+     Direct LaTeX Math
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathjax-and-math-parsing">
+     Mathjax and math parsing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linkify">
+   Linkify
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#substitutions-with-jinja2">
+   Substitutions (with Jinja2)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substitutions-and-urls">
+     Substitutions and URLs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-fences-using-colons">
+   Code fences using colons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#admonition-directives">
+   Admonition directives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auto-generated-header-anchors">
+   Auto-generated header anchors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anchor-slug-structure">
+     Anchor slug structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspect-the-links-that-will-be-created">
+     Inspect the links that will be created
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition-lists">
+   Definition Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-lists">
+   Task Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#field-lists">
+   Field Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#images">
+   Images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown-figures">
+   Markdown Figures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#html-admonitions">
+   HTML Admonitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntax-amsmath">
+   Direct LaTeX Math
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="syntax-extensions">
+<span id="id1"></span><h1>Syntax Extensions<a class="headerlink" href="#syntax-extensions" title="Permalink to this headline">#</a></h1>
+<p>MyST-Parser is highly configurable, utilising the inherent “plugability” of the <span class="xref myst">markdown-it-py</span> parser.
+The following syntaxes are optional (disabled by default) and can be enabled <em>via</em> the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> (see also <span class="xref myst"></span>).
+Their goal is generally to add more <em>Markdown friendly</em> syntaxes; often enabling and rendering <span class="xref myst">markdown-it-py plugins</span> that extend the <a class="reference external" href="https://commonmark.org/">CommonMark specification</a>.</p>
+<p>To enable all the syntaxes explained below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myst_enable_extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;amsmath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;colon_fence&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;deflist&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dollarmath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fieldlist&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;html_admonition&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;html_image&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;linkify&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;replacements&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;smartquotes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;strikethrough&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;substitution&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tasklist&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> replaces previous configuration options:
+<code class="docutils literal notranslate"><span class="pre">admonition_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">figure_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">dmath_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">amsmath_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">deflist_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">html_img_enable</span></code></p>
+</div>
+<section id="typography">
+<span id="syntax-typography"></span><h2>Typography<a class="headerlink" href="#typography" title="Permalink to this headline">#</a></h2>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">&quot;smartquotes&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>) will automatically convert standard quotations to their opening/closing variants:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'single</span> <span class="pre">quotes'</span></code>: ‘single quotes’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;double</span> <span class="pre">quotes&quot;</span></code>: “double quotes”</p></li>
+</ul>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">&quot;replacements&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>) will automatically convert some common typographic texts</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>text</p></th>
+<th class="head"><p>converted</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">(c)</span></code>, <code class="docutils literal notranslate"><span class="pre">(C)</span></code></p></td>
+<td><p>(c)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(tm)</span></code>, <code class="docutils literal notranslate"><span class="pre">(TM)</span></code></p></td>
+<td><p>(tm)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">(r)</span></code>, <code class="docutils literal notranslate"><span class="pre">(R)</span></code></p></td>
+<td><p>(r)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(p)</span></code>, <code class="docutils literal notranslate"><span class="pre">(P)</span></code></p></td>
+<td><p>(p)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+-</span></code></p></td>
+<td><p>+-</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">...</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">?....</span></code></p></td>
+<td><p>?….</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!....</span></code></p></td>
+<td><p>!….</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">????????</span></code></p></td>
+<td><p>????????</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!!!!!</span></code></p></td>
+<td><p>!!!!!</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">,,,</span></code></p></td>
+<td><p>,,,</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--</span></code></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">---</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="strikethrough">
+<span id="syntax-strikethrough"></span><h2>Strikethrough<a class="headerlink" href="#strikethrough" title="Permalink to this headline">#</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.17.0.</span></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">strikethrough</span></code> extension allows text within <code class="docutils literal notranslate"><span class="pre">~~</span></code> delimiters to have a strikethrough (horizontal line) placed over it.
+For example, <code class="docutils literal notranslate"><span class="pre">~~strikethrough</span> <span class="pre">with</span> <span class="pre">*emphasis*~~</span></code> renders as: ~~strikethrough with <em>emphasis</em>~~.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This extension is currently only supported for HTML output,
+and you will need to suppress the <code class="docutils literal notranslate"><span class="pre">myst.strikethrough</span></code> warning
+(see <span class="xref myst"></span>)</p>
+</div>
+</section>
+<section id="math-shortcuts">
+<span id="syntax-math"></span><h2>Math shortcuts<a class="headerlink" href="#math-shortcuts" title="Permalink to this headline">#</a></h2>
+<p>Math is parsed by adding to the <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> list option, in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a> one or both of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;dollarmath&quot;</span></code> for parsing of dollar <code class="docutils literal notranslate"><span class="pre">$</span></code> and <code class="docutils literal notranslate"><span class="pre">$$</span></code> encapsulated math.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;amsmath&quot;</span></code> for direct parsing of <a class="reference external" href="https://ctan.org/pkg/amsmath">amsmath LaTeX environments</a>.</p></li>
+</ul>
+<p>These options enable their respective Markdown parser plugins, as detailed in the <span class="xref myst">markdown-it plugin guide</span>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">myst_dmath_enable=True</span></code> and <code class="docutils literal notranslate"><span class="pre">myst_amsmath_enable=True</span></code> are deprecated, and replaced by <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span> <span class="pre">=</span> <span class="pre">[&quot;dollarmath&quot;,</span> <span class="pre">&quot;amsmath&quot;]</span></code></p>
+</div>
+<section id="dollar-delimited-math">
+<h3>Dollar delimited math<a class="headerlink" href="#dollar-delimited-math" title="Permalink to this headline">#</a></h3>
+<p>Enabling <code class="docutils literal notranslate"><span class="pre">dollarmath</span></code> will parse the following syntax:</p>
+<ul class="simple">
+<li><p>Inline math: <code class="docutils literal notranslate"><span class="pre">$...$</span></code></p></li>
+<li><p>Display (block) math: <code class="docutils literal notranslate"><span class="pre">$$...$$</span></code></p></li>
+</ul>
+<p>Additionally if <code class="docutils literal notranslate"><span class="pre">myst_dmath_allow_labels=True</span></code> is set (the default):</p>
+<ul class="simple">
+<li><p>Display (block) math with equation label: <code class="docutils literal notranslate"><span class="pre">$$...$$</span> <span class="pre">(1)</span></code></p></li>
+</ul>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">$x_{hey}=it+is^{math}$</span></code> renders as <span class="math notranslate nohighlight">\(x_{hey}=it+is^{math}\)</span>.
+This is equivalent to writing:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>{math}`x_{hey}=it+is^{math}`
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Escaping Dollars</p>
+<p>Math can be escaped (negated) by adding a <code class="docutils literal notranslate"><span class="pre">\</span></code> before the first symbol, e.g. <code class="docutils literal notranslate"><span class="pre">\$a$</span></code> renders as $a$.
+Escaping can also be used inside math, e.g. <code class="docutils literal notranslate"><span class="pre">$a=\$3$</span></code> renders as <span class="math notranslate nohighlight">\(a=\$3\)</span>.</p>
+<p>Conversely <code class="docutils literal notranslate"><span class="pre">\\</span></code> will negate the escaping, so <code class="docutils literal notranslate"><span class="pre">\\$a$</span></code> renders as \<span class="math notranslate nohighlight">\(a\)</span>.</p>
+</div>
+<p>Block-level math can be specified with <code class="docutils literal notranslate"><span class="pre">$$</span></code> signs that wrap the math block you’d like to parse.
+For example:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">   </span><span class="nv">\begin</span><span class="nb">{eqnarray}</span>
+<span class="nb">      y    &amp; </span><span class="o">=</span><span class="nb"> &amp; ax^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> bx </span><span class="o">+</span><span class="nb"> c </span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">      f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> &amp; </span><span class="o">=</span><span class="nb"> &amp; x^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> </span><span class="m">2</span><span class="nb">xy </span><span class="o">+</span><span class="nb"> y^</span><span class="m">2</span><span class="nb"></span>
+<span class="nb">   </span><span class="nv">\end</span><span class="nb">{eqnarray}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<p>becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \begin{eqnarray}
+      y    &amp; = &amp; ax^2 + bx + c \\
+      f(x) &amp; = &amp; x^2 + 2xy + y^2
+   \end{eqnarray}
+\end{split}\]</div>
+<p>This is equivalent to the following directive:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{math}
+   \begin{eqnarray}
+      y    &amp; = &amp; ax^2 + bx + c \\
+      f(x) &amp; = &amp; x^2 + 2xy + y^2
+   \end{eqnarray}
+```
+</pre></div>
+</div>
+<p>You can also add labels to block equations:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">e </span><span class="o">=</span><span class="nb"> mc^</span><span class="m">2</span><span class="nb"></span>
+<span class="s">$$</span> (eqn:best)
+
+This is the best equation <span class="nb">{</span>eq<span class="nb">}</span>`eqn:best`
+</pre></div>
+</div>
+<div class="math notranslate nohighlight" id="equation-eqn-best">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-best" title="Permalink to this equation">#</a></span>\[
+e = mc^2
+\]</div>
+<p>This is the best equation <a class="reference internal" href="#equation-eqn-best">(1)</a></p>
+<p>There are a few other options available to control dollar math parsing:</p>
+<p><code class="docutils literal notranslate"><span class="pre">myst_dmath_allow_space=False</span></code>, will cause inline math to only be parsed if there are no initial / final spaces, e.g. <code class="docutils literal notranslate"><span class="pre">$a$</span></code> but not <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">a$</span></code> or <code class="docutils literal notranslate"><span class="pre">$a</span> <span class="pre">$</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">myst_dmath_allow_digits=False</span></code>, will cause inline math to only be parsed if there are no initial / final digits, e.g. <code class="docutils literal notranslate"><span class="pre">$a$</span></code> but not <code class="docutils literal notranslate"><span class="pre">1$a$</span></code> or <code class="docutils literal notranslate"><span class="pre">$a$2</span></code>.</p>
+<p>These options can both be useful if you also wish to use <code class="docutils literal notranslate"><span class="pre">$</span></code> as a unit of currency.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.14.0: </span><code class="docutils literal notranslate"><span class="pre">myst_dmath_double_inline</span></code> option</p>
+</div>
+<p>To allow display math (i.e. <code class="docutils literal notranslate"><span class="pre">$$</span></code>) within an inline context, set <code class="docutils literal notranslate"><span class="pre">myst_dmath_double_inline</span> <span class="pre">=</span> <span class="pre">True</span></code> (<code class="docutils literal notranslate"><span class="pre">False</span></code> by default).
+This allows for example:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>Hence, for <span class="s">$</span><span class="nv">\alpha</span><span class="nb"> </span><span class="nv">\in</span><span class="nb"> </span><span class="o">(</span><span class="m">0</span><span class="nb">, </span><span class="m">1</span><span class="o">)</span><span class="s">$</span>,
+<span class="sb">$$</span><span class="nb"></span>
+<span class="nb">  </span><span class="nv">\mathbb</span><span class="nb"> P </span><span class="o">(</span><span class="nv">\alpha</span><span class="nb"> </span><span class="nv">\bar</span><span class="nb">{X} </span><span class="nv">\ge</span><span class="nb"> </span><span class="nv">\mu</span><span class="o">)</span><span class="nb"> </span><span class="nv">\le</span><span class="nb"> </span><span class="nv">\alpha</span><span class="nb">;</span>
+<span class="s">$$</span>
+i.e., <span class="s">$</span><span class="o">[</span><span class="nv">\alpha</span><span class="nb"> </span><span class="nv">\bar</span><span class="nb">{X}, </span><span class="nv">\infty</span><span class="o">)</span><span class="s">$</span> is a lower 1-sided <span class="s">$</span><span class="m">1</span><span class="o">-</span><span class="nv">\alpha</span><span class="s">$</span> confidence bound for <span class="s">$</span><span class="nv">\mu</span><span class="s">$</span>.
+</pre></div>
+</div>
+<p>Hence, for <span class="math notranslate nohighlight">\(\alpha \in (0, 1)\)</span>,
+$<span class="math notranslate nohighlight">\(
+  \mathbb P (\alpha \bar{X} \ge \mu) \le \alpha;
+\)</span><span class="math notranslate nohighlight">\(
+i.e., \)</span>[\alpha \bar{X}, \infty)<span class="math notranslate nohighlight">\( is a lower 1-sided \)</span>1-\alpha<span class="math notranslate nohighlight">\( confidence bound for \)</span>\mu$.</p>
+</section>
+<section id="math-in-other-block-elements">
+<h3>Math in other block elements<a class="headerlink" href="#math-in-other-block-elements" title="Permalink to this headline">#</a></h3>
+<p>Math will also work when nested in other block elements, like lists or quotes:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">-</span> A list
+<span class="k">-</span> $$ a = 1 $$
+
+<span class="k">&gt; </span><span class="ge">A block quote</span>
+<span class="k">&gt; </span><span class="ge">$$ a = 1 $$</span>
+</pre></div>
+</div>
+<ul>
+<li><p>A list</p></li>
+<li><div class="math notranslate nohighlight">
+\[ a = 1 \]</div>
+</li>
+</ul>
+<blockquote>
+<div><p>A block quote
+$<span class="math notranslate nohighlight">\( a = 1 \)</span>$</p>
+</div></blockquote>
+</section>
+<section id="direct-latex-math">
+<h3>Direct LaTeX Math<a class="headerlink" href="#direct-latex-math" title="Permalink to this headline">#</a></h3>
+<p>Want to use <a class="reference external" href="https://ctan.org/pkg/amsmath">amsmath</a> LaTeX directly, with no dollars?
+See <a class="reference internal" href="#syntax-amsmath"><span class="std std-ref">the extended syntax option</span></a>.</p>
+</section>
+<section id="mathjax-and-math-parsing">
+<span id="syntax-mathjax"></span><h3>Mathjax and math parsing<a class="headerlink" href="#mathjax-and-math-parsing" title="Permalink to this headline">#</a></h3>
+<p>When building HTML using the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/math.html#module-sphinx.ext.mathjax">sphinx.ext.mathjax</a> extension (enabled by default),
+If <code class="docutils literal notranslate"><span class="pre">dollarmath</span></code> is enabled, Myst-Parser injects the <code class="docutils literal notranslate"><span class="pre">tex2jax_ignore</span></code> (MathJax v2) and  <code class="docutils literal notranslate"><span class="pre">mathjax_ignore</span></code> (MathJax v3) classes in to the top-level section of each MyST document, and adds the following default MathJax configuration:</p>
+<p>MathJax version 2 (see <a class="reference external" href="https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html#configure-tex2jax">the tex2jax preprocessor</a>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span><span class="s2">&quot;tex2jax&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;processClass&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;tex2jax_process|mathjax_process|math|output_area&quot;</span><span class="p">}})</span><span class="w"></span>
+</pre></div>
+</div>
+<p>MathJax version 3 (see <a class="reference external" href="https://docs.mathjax.org/en/latest/options/document.html?highlight=ignoreHtmlClass#the-configuration-block">the document options</a>):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;processHtmlClass&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;tex2jax_process|mathjax_process|math|output_area&quot;</span><span class="p">}}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This ensurea that MathJax processes only math, identified by the <code class="docutils literal notranslate"><span class="pre">dollarmath</span></code> and <code class="docutils literal notranslate"><span class="pre">amsmath</span></code> extensions, or specified in <code class="docutils literal notranslate"><span class="pre">math</span></code> directives.</p>
+<p>To change this behaviour, set a custom regex, for identifying HTML classes to process, like <code class="docutils literal notranslate"><span class="pre">myst_mathjax_classes=&quot;math|myclass&quot;</span></code>, or set <code class="docutils literal notranslate"><span class="pre">myst_update_mathjax=False</span></code> to inhibit this override and process all HTML elements.</p>
+</section>
+</section>
+<section id="linkify">
+<span id="syntax-linkify"></span><h2>Linkify<a class="headerlink" href="#linkify" title="Permalink to this headline">#</a></h2>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">&quot;linkify&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>) will automatically identify “bare” web URLs and add hyperlinks:</p>
+<p><code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> -&gt; <a class="reference external" href="http://www.example.com">www.example.com</a></p>
+<p>To only match URLs that start with schema, such as <code class="docutils literal notranslate"><span class="pre">http://example.com</span></code>, set <code class="docutils literal notranslate"><span class="pre">myst_linkify_fuzzy_links=False</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This extension requires that <a class="reference external" href="https://github.com/tsutsu3/linkify-it-py">linkify-it-py</a> is installed.
+Either directly; <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">linkify-it-py</span></code> or <em>via</em> <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">myst-parser[linkify]</span></code>.</p>
+</div>
+</section>
+<section id="substitutions-with-jinja2">
+<span id="syntax-substitutions"></span><h2>Substitutions (with Jinja2)<a class="headerlink" href="#substitutions-with-jinja2" title="Permalink to this headline">#</a></h2>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">&quot;substitution&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>) will allow you to add substitutions, added in either the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> using <code class="docutils literal notranslate"><span class="pre">myst_substitutions</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myst_substitutions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;key1&quot;</span><span class="p">:</span> <span class="s2">&quot;I&#39;m a **substitution**&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>or at the top of the file, in the front-matter section (see <span class="xref myst">this section</span>):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
+<span class="nt">myst</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">substitutions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key1</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;I&#39;m</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">**substitution**&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key2</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">      </span><span class="no">```{note}</span><span class="w"></span>
+<span class="w">      </span><span class="no">{{ key1 }}</span><span class="w"></span>
+<span class="w">      </span><span class="no">```</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key3</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">      </span><span class="no">```{image} img/fun-fish.png</span><span class="w"></span>
+<span class="w">      </span><span class="no">:alt: fishy</span><span class="w"></span>
+<span class="w">      </span><span class="no">:width: 200px</span><span class="w"></span>
+<span class="w">      </span><span class="no">```</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Keys in the front-matter will override ones in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+</div>
+<p>You can use these substitutions inline or as blocks, and you can even nest substitutions in other substitutions (but circular references are prohibited):</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="5aef200a-8b1b-4b6b-815f-67911bb78013" name="c6ed135d-4cb6-46a8-9d30-a5ef4fe8f983" type="radio">
+</input><label class="sd-tab-label" for="5aef200a-8b1b-4b6b-815f-67911bb78013">
+Markdown Input</label><div class="sd-tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Inline: {{ key1 }}
+
+Block level:
+
+{{ key2 }}
+
+| col1     | col2     |
+| -------- | -------- |
+| {{key2}} | {{key3}} |
+</pre></div>
+</div>
+</div>
+<input id="bc4f04ba-2839-414e-a4f1-739b4b796657" name="c6ed135d-4cb6-46a8-9d30-a5ef4fe8f983" type="radio">
+</input><label class="sd-tab-label" for="bc4f04ba-2839-414e-a4f1-739b4b796657">
+Rendered Output</label><div class="sd-tab-content docutils">
+<p>Inline: </p>
+<p>Block level:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>col1</p></th>
+<th class="head"><p>col2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Substitutions will only be assessed where you would normally use Markdown, e.g. not in code blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```
+{{ key1 }}
+```
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">key1</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p>One should also be wary of using unsuitable directives for inline substitutions.
+This may lead to unexpected outcomes.</p>
+</div>
+<p>Substitution references are assessed as <a class="reference external" href="http://jinja.palletsprojects.com">Jinja2 expressions</a> which can use <a class="reference external" href="https://jinja.palletsprojects.com/en/2.11.x/templates/#list-of-builtin-filters">filters</a>, and also contains the <a class="reference external" href="https://www.sphinx-doc.org/en/master/extdev/envapi.html">Sphinx Environment</a> in the context (as <code class="docutils literal notranslate"><span class="pre">env</span></code>).
+Therefore you can do things like:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">-</span> version: {{ env.config.version }}
+<span class="k">-</span> docname: {{ env.docname | upper }}
+<span class="k">-</span> {{ &quot;a&quot; + &quot;b&quot; }}
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>version: </p></li>
+<li><p>docname: BOOK/REFERENCES/SYNTAXEXTENSIONS</p></li>
+<li><p>ab</p></li>
+</ul>
+<p>You can also change the delimiter if necessary, for example setting in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myst_sub_delimiters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="s2">&quot;|&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Will parse: <code class="docutils literal notranslate"><span class="pre">||</span> <span class="pre">&quot;a&quot;</span> <span class="pre">+</span> <span class="pre">&quot;b&quot;</span> <span class="pre">||</span></code>.
+This should be changed with care though, so as not to affect other syntaxes.</p>
+<p>The exact logic for handling substitutions is:</p>
+<ol class="simple">
+<li><p>Combine global substitutions (specified in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>) with front-matter substitutions, to create a variable context (front-matter takes priority)</p></li>
+<li><p>Add the sphinx <code class="docutils literal notranslate"><span class="pre">env</span></code> to the variable context</p></li>
+<li><p>Create the string content to render using Jinja2 (passing it the variable context)</p></li>
+<li><p>If the substitution is inline and not a directive, render ignoring block syntaxes (like lists or block-quotes), otherwise render with all syntax rules.</p></li>
+</ol>
+<section id="substitutions-and-urls">
+<h3>Substitutions and URLs<a class="headerlink" href="#substitutions-and-urls" title="Permalink to this headline">#</a></h3>
+<p>Substitutions cannot be directly used in URLs, such as <code class="docutils literal notranslate"><span class="pre">[a</span> <span class="pre">link](https://{{key4}}.com)</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;https://{{key4}}.com&gt;</span></code>.
+However, since Jinja2 substitutions allow for Python methods to be used, you can use string formatting or replacements:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>{{ &#39;[a link](https://{}.com)&#39;.format(key4) }}
+
+{{ &#39;&lt;https://myst-parser.readthedocs.io/en/latest/REPLACE.html&gt;&#39;.replace(&#39;REPLACE&#39;, env.docname) }}
+</pre></div>
+</div>
+<p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/book/references/syntaxExtensions.html">https://myst-parser.readthedocs.io/en/latest/book/references/syntaxExtensions.html</a></p>
+</section>
+</section>
+<section id="code-fences-using-colons">
+<span id="syntax-colon-fence"></span><h2>Code fences using colons<a class="headerlink" href="#code-fences-using-colons" title="Permalink to this headline">#</a></h2>
+<p>By adding <code class="docutils literal notranslate"><span class="pre">&quot;colon_fence&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>),
+you can also use <code class="docutils literal notranslate"><span class="pre">:::</span></code> delimiters to denote code fences, instead of <code class="docutils literal notranslate"><span class="pre">```</span></code>.</p>
+<p>Using colons instead of back-ticks has the benefit of allowing the content to be rendered correctly, when you are working in any standard Markdown editor.
+It is ideal for admonition type directives (as documented in <span class="xref myst">Directives</span>) or tables with titles, for example:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="0453610b-2958-4975-8d14-977979c1f8d1" name="2df547a3-74bb-47c7-9840-7d31a45e8ca0" type="radio">
+</input><label class="sd-tab-label" for="0453610b-2958-4975-8d14-977979c1f8d1">
+Markdown Input</label><div class="sd-tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>:::{note}
+This text is <span class="gs">**standard**</span> <span class="ge">_Markdown_</span>
+:::
+
+:::{table} This is a <span class="gs">**standard**</span> <span class="ge">_Markdown_</span> title
+:align: center
+:widths: grid
+
+abc | mnp | xyz
+--- | --- | ---
+123 | 456 | 789
+:::
+</pre></div>
+</div>
+</div>
+<input id="e51a0326-0782-4b23-bb9a-ff1c95f41fe7" name="2df547a3-74bb-47c7-9840-7d31a45e8ca0" type="radio">
+</input><label class="sd-tab-label" for="e51a0326-0782-4b23-bb9a-ff1c95f41fe7">
+Rendered Output</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This text is <strong>standard</strong> <em>Markdown</em></p>
+</div>
+<table class="colwidths-auto colwidths-given table" id="id3">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">This is a <strong>standard</strong> <em>Markdown</em> title</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>abc</p></th>
+<th class="head"><p>mnp</p></th>
+<th class="head"><p>xyz</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>123</p></td>
+<td><p>456</p></td>
+<td><p>789</p></td>
+</tr>
+<tr class="row-odd"><td><p>:::</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Similar to normal directives, these directives can also be nested:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>::::{important}
+:::{note}
+This text is <span class="gs">**standard**</span> <span class="ge">_Markdown_</span>
+:::
+::::
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This text is <strong>standard</strong> <em>Markdown</em></p>
+</div>
+</div>
+<p>and also parameter options can be used:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>:::{admonition} This <span class="ge">*is*</span> also <span class="gs">**Markdown**</span>
+:class: warning
+
+This text is <span class="gs">**standard**</span> <span class="ge">_Markdown_</span>
+:::
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">This <em>is</em> also <strong>Markdown</strong></p>
+<p>This text is <strong>standard</strong> <em>Markdown</em></p>
+</div>
+</section>
+<section id="admonition-directives">
+<span id="syntax-admonitions"></span><h2>Admonition directives<a class="headerlink" href="#admonition-directives" title="Permalink to this headline">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">myst_admonition_enable</span></code> is deprecated and replaced by <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span> <span class="pre">=</span> <span class="pre">[&quot;colon_fence&quot;]</span></code> (see above).
+Also, classes should now be set with the <code class="docutils literal notranslate"><span class="pre">:class:</span> <span class="pre">myclass</span></code> option.</p>
+<p>Also see <a class="reference internal" href="#syntax-html-admonition"><span class="std std-ref">HTML Admonitions</span></a>.</p>
+</div>
+</section>
+<section id="auto-generated-header-anchors">
+<span id="syntax-header-anchors"></span><h2>Auto-generated header anchors<a class="headerlink" href="#auto-generated-header-anchors" title="Permalink to this headline">#</a></h2>
+<p>The MyST Parser can automatically generate label “slugs” for header anchors so that you can reference them from markdown links.
+For example, you can use header bookmark links, locally; <code class="docutils literal notranslate"><span class="pre">[](#header-anchor)</span></code>, or cross-file <code class="docutils literal notranslate"><span class="pre">[](path/to/file.md#header-anchor)</span></code>.
+To achieve this, use the <code class="docutils literal notranslate"><span class="pre">myst_heading_anchors</span> <span class="pre">=</span> <span class="pre">DEPTH</span></code> configuration option, where <code class="docutils literal notranslate"><span class="pre">DEPTH</span></code> is the depth of header levels for which you wish to generate links.</p>
+<p>For example, the following configuration in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> tells the <code class="docutils literal notranslate"><span class="pre">myst_parser</span></code> to generate labels for heading anchors for <code class="docutils literal notranslate"><span class="pre">h1</span></code>, <code class="docutils literal notranslate"><span class="pre">h2</span></code>, and <code class="docutils literal notranslate"><span class="pre">h3</span></code> level headings (corresponding to <code class="docutils literal notranslate"><span class="pre">#</span></code>, <code class="docutils literal notranslate"><span class="pre">##</span></code>, and <code class="docutils literal notranslate"><span class="pre">###</span></code> in markdown).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myst_heading_anchors</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>You can then insert markdown links directly to anchors that are generated from your header titles in your documentation.
+For example <code class="docutils literal notranslate"><span class="pre">[](#auto-generated-header-anchors)</span></code>: <a class="reference external" href="#auto-generated-header-anchors"></a>.</p>
+<p>The paths to other files should be relative to the current file, for example
+<code class="docutils literal notranslate"><span class="pre">[**link</span> <span class="pre">text**](./syntax.md#core-syntax)</span></code>: <a class="reference external" href="./syntax.md#core-syntax"><strong>link text</strong></a>.</p>
+<section id="anchor-slug-structure">
+<h3>Anchor slug structure<a class="headerlink" href="#anchor-slug-structure" title="Permalink to this headline">#</a></h3>
+<p>The anchor “slugs” created aim to follow the <a class="reference external" href="https://github.com/Flet/github-slugger">GitHub implementation</a>:</p>
+<ul class="simple">
+<li><p>lower-case text</p></li>
+<li><p>remove punctuation</p></li>
+<li><p>replace spaces with <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li><p>enforce uniqueness <em>via</em> suffix enumeration <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+</ul>
+<p>To change the slug generation function, set <code class="docutils literal notranslate"><span class="pre">myst_heading_slug_func</span></code> in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to a function that accepts a string and returns a string.</p>
+</section>
+<section id="inspect-the-links-that-will-be-created">
+<h3>Inspect the links that will be created<a class="headerlink" href="#inspect-the-links-that-will-be-created" title="Permalink to this headline">#</a></h3>
+<p>You can inspect the links that will be created using the command-line tool:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>myst-anchors -l <span class="m">2</span> docs/syntax/optional.md
+<span class="go">&lt;h1 id=&quot;optional-myst-syntaxes&quot;&gt;&lt;/h1&gt;</span>
+<span class="go">&lt;h2 id=&quot;admonition-directives&quot;&gt;&lt;/h2&gt;</span>
+<span class="go">&lt;h2 id=&quot;auto-generated-header-anchors&quot;&gt;&lt;/h2&gt;</span>
+<span class="go">&lt;h2 id=&quot;definition-lists&quot;&gt;&lt;/h2&gt;</span>
+<span class="go">&lt;h2 id=&quot;images&quot;&gt;&lt;/h2&gt;</span>
+<span class="go">&lt;h2 id=&quot;markdown-figures&quot;&gt;&lt;/h2&gt;</span>
+<span class="go">&lt;h2 id=&quot;direct-latex-math&quot;&gt;&lt;/h2&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="definition-lists">
+<span id="syntax-definition-lists"></span><h2>Definition Lists<a class="headerlink" href="#definition-lists" title="Permalink to this headline">#</a></h2>
+<p>By adding <code class="docutils literal notranslate"><span class="pre">&quot;deflist&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>),
+you will be able to utilise definition lists.
+Definition lists utilise the <span class="xref myst">markdown-it-py deflist plugin</span>, which itself is based on the <a class="reference external" href="http://johnmacfarlane.net/pandoc/README.html#definition-lists">Pandoc definition list specification</a>.</p>
+<p>This syntax can be useful, for example, as an alternative to nested bullet-lists:</p>
+<ul class="simple">
+<li><p>Term 1</p>
+<ul>
+<li><p>Definition</p></li>
+</ul>
+</li>
+<li><p>Term 2</p>
+<ul>
+<li><p>Definition</p></li>
+</ul>
+</li>
+</ul>
+<p>Using instead:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Term 1
+: Definition
+
+Term 2
+: Definition
+</pre></div>
+</div>
+<p>Term 1
+: Definition</p>
+<p>Term 2
+: Definition</p>
+<p>From the Pandoc documentation:</p>
+<blockquote>
+<div><p>Each term must fit on one line, which may optionally be followed by a blank line, and must be followed by one or more definitions.
+A definition begins with a colon or tilde, which may be indented one or two spaces.</p>
+</div></blockquote>
+<blockquote>
+<div><p>A term may have multiple definitions, and each definition may consist of one or more block elements (paragraph, code block, list, etc.)</p>
+</div></blockquote>
+<p>Here is a more complex example, demonstrating some of these features:</p>
+<p>Term <em>with Markdown</em>
+: Definition <a class="reference internal" href="#syntax-definition-lists"><span class="std std-ref">with reference</span></a></p>
+<p>A second paragraph
+: A second definition</p>
+<p>Term 2
+~ Definition 2a
+~ Definition 2b</p>
+<p>Term 3
+:     A code block
+: &gt; A quote
+: A final definition, that can even include images:</p>
+  <img src="img/fun-fish.png" alt="fishy" width="200px">
+<p>This was created from:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Term <span class="ge">*with Markdown*</span>
+: Definition [<span class="nt">with reference</span>](<span class="na">syntax/definition-lists</span>)
+
+  A second paragraph
+: A second definition
+
+Term 2
+  ~ Definition 2a
+  ~ Definition 2b
+
+Term 3
+:     A code block
+
+: &gt; A quote
+
+: A final definition, that can even include images:
+
+  &lt;img src=&quot;img/fun-fish.png&quot; alt=&quot;fishy&quot; width=&quot;200px&quot;&gt;
+</pre></div>
+</div>
+</section>
+<section id="task-lists">
+<span id="syntax-tasklists"></span><h2>Task Lists<a class="headerlink" href="#task-lists" title="Permalink to this headline">#</a></h2>
+<p>By adding <code class="docutils literal notranslate"><span class="pre">&quot;tasklist&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>),
+you will be able to utilise task lists.
+Task lists utilise the <span class="xref myst">markdown-it-py tasklists plugin</span>,
+and are applied to markdown list items starting with <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> or <code class="docutils literal notranslate"><span class="pre">[x]</span></code>:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">- [ ]</span> An item that needs doing
+<span class="k">- [x]</span> An item that is complete
+</pre></div>
+</div>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> An item that needs doing</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> An item that is complete</p></li>
+</ul>
+</section>
+<section id="field-lists">
+<span id="syntax-fieldlists"></span><h2>Field Lists<a class="headerlink" href="#field-lists" title="Permalink to this headline">#</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.16.0.</span></p>
+</div>
+<p>Field lists are mappings from field names to field bodies,
+based on the <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#field-lists">reStructureText syntax</a>.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>:name only:
+:name: body
+:<span class="ge">*Nested syntax*</span>: Both name and body may contain <span class="gs">**nested syntax**</span>.
+:Paragraphs: Since the field marker may be quite long, the second
+   and subsequent lines of a paragraph do not have to line up
+   with the first line.
+:Alignment 1: If the field body starts on the first line...
+
+              Then the entire field body must be indented the same.
+:Alignment 2:
+  If the field body starts on a subsequent line...
+
+  Then the indentation is always two spaces.
+:Blocks:
+
+  As well as paragraphs, any block syntaxes may be used in a field body:
+
+  <span class="k">-</span> Me
+  <span class="k">-</span> Myself
+  <span class="k">-</span> I
+
+<span class="sb">  ```python</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+<span class="sb">  ```</span>
+</pre></div>
+</div>
+<p>:name only:
+:name: body
+:<em>Nested syntax</em>: Both name and body may contain <strong>nested syntax</strong>.
+:Paragraphs: Since the field marker may be quite long, the second
+and subsequent lines of a paragraph do not have to line up
+with the first line.
+:Alignment 1: If the field body starts on the first line…</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>          Then the entire field body must be indented the same.
+</pre></div>
+</div>
+<p>:Alignment 2:
+If the field body starts on a subsequent line…</p>
+<p>Then the indentation is always two spaces.
+:Blocks:</p>
+<p>As well as paragraphs, any block syntaxes may be used in a field body:</p>
+<ul class="simple">
+<li><p>Me</p></li>
+<li><p>Myself</p></li>
+<li><p>I</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A prominent use case of field lists is for use in API docstrings, as used in <span class="xref myst">Sphinx’s docstring renderers</span>:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{py:function} send_message(sender, priority)
+
+Send a message to a recipient
+
+:param str sender: The person sending the message
+:param priority: The priority of the message, can be a number 1-5
+:type priority: int
+:return: the message id
+:rtype: int
+:raises ValueError: if the message_body exceeds 160 characters
+```
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="send_message">
+<span class="sig-name descname"><span class="pre">send_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#send_message" title="Permalink to this definition">#</a></dt>
+<dd><p>Send a message to a recipient</p>
+<p>:param str sender: The person sending the message
+:param priority: The priority of the message, can be a number 1-5
+:type priority: int
+:return: the message id
+:rtype: int
+:raises ValueError: if the message_body exceeds 160 characters</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently <code class="docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code> does not support MyST, see <span class="xref myst"></span>.</p>
+</div>
+</section>
+<section id="images">
+<span id="syntax-images"></span><h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">#</a></h2>
+<p>MyST provides a few different syntaxes for including images in your documentation, as explained below.</p>
+<p>The first is the standard Markdown syntax:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>![<span class="nt">fishy</span>](<span class="na">img/fun-fish.png</span>)
+</pre></div>
+</div>
+<p><img alt="fishy" src="book/references/img/fun-fish.png" /></p>
+<p>This will correctly copy the image to the build folder and will render it in all output formats (HTML, TeX, etc).
+However, it is limited in the configuration that can be applied, for example setting a width.</p>
+<p>As discussed <span class="xref myst">above</span>, MyST allow for directives to be used such as <code class="docutils literal notranslate"><span class="pre">image</span></code> and <code class="docutils literal notranslate"><span class="pre">figure</span></code> (see <span class="xref std std-ref">the sphinx documentation</span>):</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{image} img/fun-fish.png
+:alt: fishy
+:class: bg-primary
+:width: 200px
+:align: center
+```
+</pre></div>
+</div>
+<a class="bg-primary mb-1 reference internal image-reference" href="book/references/img/fun-fish.png"><img alt="fishy" class="bg-primary mb-1" src="book/references/img/fun-fish.png" style="width: 200px;" /></a>
+<p>Additional options can now be set, however, in contrast to the Markdown syntax, this syntax will not show the image in common Markdown viewers (for example when the files are viewed on GitHub).</p>
+<p>The final option is directly using HTML, which is also parsed by MyST.
+This is usually a bad option, because the HTML is treated as raw text during the build process and so sphinx will not recognise that the image file is to be copied, and will not output the HTML into non-HTML output formats.</p>
+<p>HTML parsing to the rescue!</p>
+<p>By adding <code class="docutils literal notranslate"><span class="pre">&quot;html_image&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>),
+MySt-Parser will attempt to convert any isolated <code class="docutils literal notranslate"><span class="pre">img</span></code> tags (i.e. not wrapped in any other HTML) to the internal representation used in sphinx.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img/fun-fish.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;fishy&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200px&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img/fun-fish.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;fishy&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200px&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-primary&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<img src="img/fun-fish.png" alt="fishy" width="200px">
+<img src="img/fun-fish.png" alt="fishy" width="200px" class="bg-primary">
+<p>Allowed attributes are equivalent to the <code class="docutils literal notranslate"><span class="pre">image</span></code> directive: src, alt, class, width, height and name.
+Any other attributes will be dropped.</p>
+<p>HTML image can also be used inline!</p>
+<p>I’m an inline image: <img src="img/fun-fish.png" height="20px"></p>
+</section>
+<section id="markdown-figures">
+<span id="syntax-figures"></span><h2>Markdown Figures<a class="headerlink" href="#markdown-figures" title="Permalink to this headline">#</a></h2>
+<p>By adding <code class="docutils literal notranslate"><span class="pre">&quot;colon_fence&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>),
+we can combine the above two extended syntaxes,
+to create a fully Markdown compliant version of the <code class="docutils literal notranslate"><span class="pre">figure</span></code> directive named <code class="docutils literal notranslate"><span class="pre">figure-md</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">myst_figure_enable</span></code> with the <code class="docutils literal notranslate"><span class="pre">figure</span></code> directive is deprecated and replaced by <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span> <span class="pre">=</span> <span class="pre">[&quot;colon_fence&quot;]</span></code> and <code class="docutils literal notranslate"><span class="pre">figure-md</span></code>.</p>
+</div>
+<p>The figure block must contain <strong>only</strong> two components; an image, in either Markdown or HTML syntax, and a single paragraph for the caption.</p>
+<p>The title is optional and taken as the reference target of the figure:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>:::{figure-md} fig-target
+:class: myclass
+
+&lt;img src=&quot;img/fun-fish.png&quot; alt=&quot;fishy&quot; class=&quot;bg-primary mb-1&quot; width=&quot;200px&quot;&gt;
+
+This is a caption in <span class="gs">**Markdown**</span>
+:::
+</pre></div>
+</div>
+<figure class="myclass align-default" id="fig-target">
+<a class="bg-primary mb-1 reference internal image-reference" href="book/references/img/fun-fish.png"><img alt="fishy" class="bg-primary mb-1" src="book/references/img/fun-fish.png" style="width: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">This is a caption in <strong>Markdown</strong></span><a class="headerlink" href="#fig-target" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As we see here, the target we set can be referenced:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>[<span class="nt">Go to the fish!</span>](<span class="na">fig-target</span>)
+</pre></div>
+</div>
+<p><a class="reference internal" href="#fig-target"><span class="std std-ref">Go to the fish!</span></a></p>
+</section>
+<section id="html-admonitions">
+<span id="syntax-html-admonition"></span><h2>HTML Admonitions<a class="headerlink" href="#html-admonitions" title="Permalink to this headline">#</a></h2>
+<p>By adding <code class="docutils literal notranslate"><span class="pre">&quot;html_admonition&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>),
+you can enable parsing of <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;admonition&quot;&gt;</span></code> HTML blocks.
+These blocks will be converted internally to Sphinx admonition directives, and so will work correctly for all output formats.
+This is helpful when you care about viewing the “source” Markdown, such as in Jupyter Notebooks.</p>
+<p>If the first element within the <code class="docutils literal notranslate"><span class="pre">div</span></code> is <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;title&quot;&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;title&quot;&gt;</span></code>, then this will be set as the admonition title.
+All internal text (and the title) will be parsed as MyST-Markdown and all classes and an optional name will be passed to the admonition:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;admonition note&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;html-admonition&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background: lightgreen; padding: 10px&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>This is the **title**<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+This is the *content*
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note" name="html-admonition" style="background: lightgreen; padding: 10px">
+<div class="title">This is the **title**</div>
+This is the *content*
+</div>
+<p>During the Sphinx render, both the <code class="docutils literal notranslate"><span class="pre">class</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes will be used by Sphinx, but any other attributes like <code class="docutils literal notranslate"><span class="pre">style</span></code> will be discarded.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There can be no empty lines in the block, otherwise they will be read as two separate blocks.
+If you want to use multiple paragraphs then they can be enclosed in <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;admonition note&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+</div>
+</div>
+<p>You can also nest HTML admonitions:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;admonition&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Some **content**<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;admonition tip&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>A *title*<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraph 2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition">
+<p>Some **content**</p>
+  <div class="admonition tip">
+  <div class="title">A *title*</div>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  </div>
+</div>
+</section>
+<section id="syntax-amsmath">
+<span id="id2"></span><h2>Direct LaTeX Math<a class="headerlink" href="#syntax-amsmath" title="Permalink to this headline">#</a></h2>
+<p>By adding <code class="docutils literal notranslate"><span class="pre">&quot;amsmath&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> (in the sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">configuration file</a>),
+you can enable direct parsing of <a class="reference external" href="https://ctan.org/pkg/amsmath">amsmath</a> LaTeX equations.
+These top-level math environments will then be directly parsed:</p>
+<blockquote>
+<div><p>equation, multline, gather, align, alignat, flalign, matrix, pmatrix, bmatrix, Bmatrix, vmatrix, Vmatrix, eqnarray.</p>
+</div></blockquote>
+<p>As expected, environments ending in <code class="docutils literal notranslate"><span class="pre">*</span></code> will not be numbered, for example:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>gather*<span class="nb">}</span>
+a<span class="nb">_</span>1=b<span class="nb">_</span>1+c<span class="nb">_</span>1<span class="k">\\</span>
+a<span class="nb">_</span>2=b<span class="nb">_</span>2+c<span class="nb">_</span>2-d<span class="nb">_</span>2+e<span class="nb">_</span>2
+<span class="k">\end</span><span class="nb">{</span>gather*<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+a<span class="nb">_{</span>11<span class="nb">}&amp;</span> =b<span class="nb">_{</span>11<span class="nb">}&amp;</span>
+  a<span class="nb">_{</span>12<span class="nb">}&amp;</span> =b<span class="nb">_{</span>12<span class="nb">}</span><span class="k">\\</span>
+a<span class="nb">_{</span>21<span class="nb">}&amp;</span> =b<span class="nb">_{</span>21<span class="nb">}&amp;</span>
+  a<span class="nb">_{</span>22<span class="nb">}&amp;</span> =b<span class="nb">_{</span>22<span class="nb">}</span>+c<span class="nb">_{</span>22<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+</pre></div>
+</div>
+<p>\begin{gather*}
+a_1=b_1+c_1\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}</p>
+<p>\begin{align}
+a_{11}&amp; =b_{11}&amp;
+a_{12}&amp; =b_{12}\
+a_{21}&amp; =b_{21}&amp;
+a_{22}&amp; =b_{22}+c_{22}
+\end{align}</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">\labels</span></code> inside the environment are not currently identified, and so cannot be referenced.
+We hope to implement this in a future update (see <a class="reference external" href="https://github.com/executablebooks/MyST-Parser/issues/202">executablebooks/MyST-Parser#202</a>)!</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>See also <a class="reference internal" href="#syntax-mathjax"><span class="std std-ref">how Mathjax is configured with MyST-Parser</span></a>.</p>
+</div>
+<p>This syntax will also work when nested in other block elements, like lists or quotes:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">-</span> A list
+<span class="k">-</span> \begin{gather*}
+  a<span class="ge">_1=b_</span>1+c_1\\a<span class="ge">_2=b_</span>2+c_2-d_2+e_2
+  \end{gather*}
+
+<span class="k">&gt; </span><span class="ge">A block quote</span>
+<span class="k">&gt; </span><span class="ge">\begin{gather*}</span>
+  a<span class="ge">_1=b_</span>1+c_1\\a<span class="ge">_2=b_</span>2+c_2-d_2+e_2
+  \end{gather*}
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>A list</p></li>
+<li><p>\begin{gather*}
+a_1=b_1+c_1\a_2=b_2+c_2-d_2+e_2
+\end{gather*}</p></li>
+</ul>
+<blockquote>
+<div><p>A block quote
+\begin{gather*}
+a_1=b_1+c_1\a_2=b_2+c_2-d_2+e_2
+\end{gather*}</p>
+</div></blockquote>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/references"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="testMyST.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Extend CommonMark with roles and directives</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="bibliography.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Deva Sen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
