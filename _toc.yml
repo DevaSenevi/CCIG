@@ -3,14 +3,36 @@
 
 format: jb-book
 root: index
-chapters:
+parts:
+- caption: Project files
+  chapters:
   - file: book/analysis_steps 
   - file: book/trabeculae_models
   - file: book/4Dsurvival_PH/4Dsurvival_ph
+
+- caption: References     
+  chapters:
   - file: book/notebooks
   - file: book/markdown
   - file: book/testMyST
   - file: book/bibliography
+
+
+
+
+
+#######Below is the example format for a toc file both as chapters and sections#######
+
+#format: jb-book
+#root: index
+#chapters:
+#  - file: book/analysis_steps 
+#  - file: book/trabeculae_models
+#  - file: book/4Dsurvival_PH/4Dsurvival_ph
+#  - file: book/notebooks
+#  - file: book/markdown
+#  - file: book/testMyST
+#  - file: book/bibliography
   
     
 # Or you organize the TOC by parts
@@ -25,3 +47,4 @@ chapters:
 #   - caption: Appendices
 #     chapters:
 #       - file: book/bibliography
+
