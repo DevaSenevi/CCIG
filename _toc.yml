@@ -4,20 +4,20 @@
 format: jb-book
 root: index
 parts:
-- caption: Project files
+- caption: Project documentation
   chapters:
-  - file: book/analysis_steps 
+  - file: book/cardio_age/age_intro
+    sections:
+    - file: book/cardio_age/analysis_steps
   - file: book/trabeculae_models
   - file: book/4Dsurvival_PH/4Dsurvival_ph
 
-- caption: References     
+- caption: References
   chapters:
   - file: book/notebooks
   - file: book/markdown
   - file: book/testMyST
   - file: book/bibliography
-
-
 
 
 
