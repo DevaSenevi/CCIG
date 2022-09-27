@@ -8,7 +8,9 @@ parts:
 
 - caption: Project documentation
   chapters:
-  - file: book/analysis_steps
+  - file: book/cardio_age/age_intro
+    sections:
+    - file: book/cardio_age/analysis_steps
   - file: book/trabeculae_models
   - file: book/4Dsurvival_PH/4Dsurvival_ph
 
